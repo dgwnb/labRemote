@@ -53,5 +53,3 @@ if ( ${ENABLE_FTDI} )
   target_link_libraries(DevCom ${LIBMPSSE_LIBRARIES} ${LIBFTDI_LIBRARIES})
 endif()
 add_compile_options(-std=c++11)
-
-add_subdirectory(examples)

@@ -16,7 +16,7 @@ public:
   virtual void reset();
   virtual void read();
 
-  virtual unsigned status() const;
+  virtual uint status() const;
   virtual float temperature() const;
   virtual float humidity() const;
   virtual float pressure() const;

@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     }
 
 #ifndef SCOPE
-  logger(logERROR) << "Missing libScope";
+  log(logERROR) << "Missing libScope";
 #else // SCOPE
 
   PicoScope *pico=new PS6000();
