@@ -10,11 +10,11 @@
 #include <unistd.h>  // for sleep()
 
 using namespace std;
-MotionController::MotionController(const char* dn_1):
+MotionController::MotionController(const char* dn_1, const char* dn_2):
     ControllerBase()
 {
-    xy_ctrl = new ControllerZaber(dn_1);
-    z_ctrl = new ControllerGalil("192.168.1.30");
+   	xy_ctrl = new ControllerZaber(dn_1);
+	z_ctrl =  new ControllerZaberZ(dn_2);
     m_position[0] = m_position[1] = m_position[2] = -1;
 }
 

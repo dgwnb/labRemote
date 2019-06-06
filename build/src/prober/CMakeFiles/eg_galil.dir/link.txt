@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/eg_galil.dir/eg_galil.cpp.o  -o ../../bin/eg_galil -rdynamic -lGalil ../../lib/libWaferProb.so ../../lib/libZaber.so -Wl,-rpath,/home/amolnar/labRemoteMyClone/build/lib 

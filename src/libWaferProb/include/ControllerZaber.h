@@ -34,9 +34,10 @@ public: // implement controller's interface
     int mv_rel(int axis, float value); // move w.r.t current-position
     int stop();
 
+
     // get current position
     int get_position();
-    int get_speed();
+
 
     int set_home();
     int set_center();

@@ -7,7 +7,7 @@
 #include <unistd.h>  // for sleep()
 
 Handler::Handler(){
-    ctrl = new MotionController("/dev/ttyACM0");
+    ctrl = new MotionController("/dev/ttyACM0", "/dev/ttyUSB1");
     ctrl->connect();
 }
 

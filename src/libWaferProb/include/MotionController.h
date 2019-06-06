@@ -1,24 +1,23 @@
-#ifndef __MontionController_H_
-#define __MontionController_H_
+#ifndef __MotionController_H_
+#define __MotionController_H_
 
 /*
  * A controller uses different other controllers.
  */
-#include "gclib.h"
 
 #include "ControllerBase.h"
 #include "ControllerZaber.h"
-#include "ControllerGalil.h"
+#include "ControllerZaberZ.h"
 
 class MotionController : public ControllerBase{
 
 private:
 
     ControllerZaber* xy_ctrl; // xy-axis station is controlled by a machine from Zaber
-    ControllerGalil* z_ctrl;    // z-axis controled by a machine from Garlil
+    ControllerZaberZ* z_ctrl;    // z-axis controlled by a machine from Zaber as well
 
 public:
-    MotionController(const char* dn_1);
+    MotionController(const char* dn_1, const char* dn_2);
     ~MotionController();
 
     int connect();
@@ -45,7 +44,7 @@ public:
     }
     int write(int axis, const string& cmd);
 
-	int run_cmd(const string& cmd);
+//	int run_cmd(const string& cmd);
 
     void calibrate_Z(){
         z_ctrl->find_max_min();

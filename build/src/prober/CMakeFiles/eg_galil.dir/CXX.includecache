@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/amolnar/labRemoteMyClone/src/prober/eg_galil.cpp
+stdio.h
+-
+iostream
+-
+string
+-
+ControllerGalil.h
+/home/amolnar/labRemoteMyClone/src/prober/ControllerGalil.h
+
