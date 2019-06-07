@@ -376,8 +376,8 @@ clean: src/prober/CMakeFiles/eg_zaber.dir/clean
 # Target rules for target src/prober/CMakeFiles/motion_controller.dir
 
 # All Build rule for target.
-src/prober/CMakeFiles/motion_controller.dir/all: src/libWaferProb/CMakeFiles/WaferProb.dir/all
 src/prober/CMakeFiles/motion_controller.dir/all: src/libZaber/CMakeFiles/Zaber.dir/all
+src/prober/CMakeFiles/motion_controller.dir/all: src/libWaferProb/CMakeFiles/WaferProb.dir/all
 	$(MAKE) -f src/prober/CMakeFiles/motion_controller.dir/build.make src/prober/CMakeFiles/motion_controller.dir/depend
 	$(MAKE) -f src/prober/CMakeFiles/motion_controller.dir/build.make src/prober/CMakeFiles/motion_controller.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/amolnar/labRemoteMyClone/build/CMakeFiles  37

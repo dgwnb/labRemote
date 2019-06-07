@@ -90,21 +90,21 @@ int ControllerZaberZ::set_speed(int axis, float value)
 {
 	int steps = convert_mm_to_turns(value);
 	char cmd[256];
-	sprintf(cmd, "/1 %d set maxspeed %d\n", axis, steps);
+	sprintf(cmd, "/1 set maxspeed %d\n", steps);
 	return write(cmd);
 }
 
 int ControllerZaberZ::mv_abs(int axis, float  value){
 	int steps= convert_mm_to_turns(value);
 	char cmd[256];
-	sprintf(cmd, "/1 %d move abs %d\n", axis, steps);
+	sprintf(cmd, "/1 move abs %d\n", steps);
 	return write(cmd);
 }
 
 int ControllerZaberZ::mv_rel(int axis, float  value){
 	int steps= convert_mm_to_turns(value);
 	char cmd[256];
-	sprintf(cmd, "/1 %d move rel %d\n", axis, steps);
+	sprintf(cmd, "/1 move rel %d\n", steps);
 	return write(cmd);
 }
 
@@ -140,7 +140,7 @@ int ControllerZaberZ::set_home(){
 	return 0;
 }
 
-int set_center()
+int ControllerZaberZ::set_center()
 {
 	return 0;
 }
@@ -211,12 +211,11 @@ void ControllerZaberZ::poll_until_idle(){
 
 void ControllerZaberZ::find_max_min()
 {
-	int axis=2;
-	mv_rel(axis, 100000);
+	write("/1 mv max\n");
 	float m_zmax;
 	m_zmax= get_position();
 	printf("Hello: %2f\n", m_zmax);
-	mv_rel(axis, -100000);
+	write("/1 mv min\n");
 	float m_zmin;
 	m_zmin= get_position();
 

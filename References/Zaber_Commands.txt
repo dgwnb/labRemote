@@ -1,0 +1,45 @@
+Zaber ASCII Commands
+
+
+
+Zaber Device Message
+	Set up for a command sent to Zaber device:
+	/1 1 move abs 10000↵
+	/n a xxxx yyy yyyyy[:CC]ff
+
+	/: Is needed for any message sent to a Zaber device
+	n: Is the device adress and is optional if not included or set to 0 all devices on the chain execute the command
+	a: Is the axis assume ZaberZ's axis will be 1
+	xxxx: Command 
+	yyy: Command parameter- ie how far to move
+	ff: Is the footer this is symbolizes the end of the line. Many things accepted \n, \r but is also equivalent to a return on a terminal equivalent
+	Whatever is left is not super important
+
+Zaber Device Reply
+	@01 0 OK IDLE -- 0↵
+	@nn a fl bbbb ww x[:CC]ff
+
+	@: Zaber device always replies with this symbol first
+	nn: The device adress of the device responding
+	a: The axis of the device that is responding
+	fl: This is the flag of reply essentially if the message was recieved OK means accepted RJ means rejected the device will give a reason which are explanatory
+	bbbb: Is the status of the device can be BUSY when moving or IDLE otherwise.
+	ff: Is again the message footer 
+	The rest is not super important
+
+
+Basic Commands:
+	Will not specify axis or device number for obvious reasons
+	/1 home\n -moves the axis to the home position.
+	/1 move abs xxxx\n -moves the device to absolute position xxxx
+	/1 move max\n -moves the device the maximum position
+	/1 move min\n - moves the device to the minimum position
+	/1 move rel xxxx\n -move the device to relative position xxxx
+	/1 move vel xxxx\n -move the device at velocity xxxx
+	/1 set maxspeed xxxx\n -set the maxspeed to xxxx
+	/1 get maxspeed \n -get the maxspeed
+	/1 stop\n -Stops the device
+	/1 tools parking park\n -Parks the device
+	/1 tools parking unpark\n -Unparks the device
+	/1 get pos\n -Gets position of the device uncertain if this will work for z device
+
