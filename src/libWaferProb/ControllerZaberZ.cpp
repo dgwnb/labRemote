@@ -81,7 +81,7 @@ string* ControllerZaberZ::write_with_reply(const string& cmd)
 }
 
 int ControllerZaberZ::stop(){
-	int status = write("/estop\n");
+	int status = write("/stop\n");
 	get_position();
 	return status;
 }
