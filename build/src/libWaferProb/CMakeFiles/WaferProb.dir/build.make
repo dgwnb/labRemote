@@ -121,32 +121,9 @@ src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaber.cpp.o.provides: src/li
 
 src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaber.cpp.o.provides.build: src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaber.cpp.o
 
-src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o: src/libWaferProb/CMakeFiles/WaferProb.dir/flags.make
-src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o: ../src/libWaferProb/MotionController.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/amolnar/labRemoteMyClone/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o"
-	cd /home/amolnar/labRemoteMyClone/build/src/libWaferProb && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WaferProb.dir/MotionController.cpp.o -c /home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.cpp
-
-src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaferProb.dir/MotionController.cpp.i"
-	cd /home/amolnar/labRemoteMyClone/build/src/libWaferProb && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.cpp > CMakeFiles/WaferProb.dir/MotionController.cpp.i
-
-src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaferProb.dir/MotionController.cpp.s"
-	cd /home/amolnar/labRemoteMyClone/build/src/libWaferProb && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.cpp -o CMakeFiles/WaferProb.dir/MotionController.cpp.s
-
-src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.requires:
-.PHONY : src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.requires
-
-src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.provides: src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.requires
-	$(MAKE) -f src/libWaferProb/CMakeFiles/WaferProb.dir/build.make src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.provides.build
-.PHONY : src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.provides
-
-src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.provides.build: src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o
-
 src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o: src/libWaferProb/CMakeFiles/WaferProb.dir/flags.make
 src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o: ../src/libWaferProb/ControllerZaberZ.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/amolnar/labRemoteMyClone/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/amolnar/labRemoteMyClone/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o"
 	cd /home/amolnar/labRemoteMyClone/build/src/libWaferProb && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o -c /home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerZaberZ.cpp
 
@@ -166,6 +143,29 @@ src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o.provides: src/l
 .PHONY : src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o.provides
 
 src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o.provides.build: src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o
+
+src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o: src/libWaferProb/CMakeFiles/WaferProb.dir/flags.make
+src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o: ../src/libWaferProb/MotionController.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/amolnar/labRemoteMyClone/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o"
+	cd /home/amolnar/labRemoteMyClone/build/src/libWaferProb && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/WaferProb.dir/MotionController.cpp.o -c /home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.cpp
+
+src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaferProb.dir/MotionController.cpp.i"
+	cd /home/amolnar/labRemoteMyClone/build/src/libWaferProb && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.cpp > CMakeFiles/WaferProb.dir/MotionController.cpp.i
+
+src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaferProb.dir/MotionController.cpp.s"
+	cd /home/amolnar/labRemoteMyClone/build/src/libWaferProb && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.cpp -o CMakeFiles/WaferProb.dir/MotionController.cpp.s
+
+src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.requires:
+.PHONY : src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.requires
+
+src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.provides: src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.requires
+	$(MAKE) -f src/libWaferProb/CMakeFiles/WaferProb.dir/build.make src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.provides.build
+.PHONY : src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.provides
+
+src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.provides.build: src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o
 
 src/libWaferProb/CMakeFiles/WaferProb.dir/Handler.cpp.o: src/libWaferProb/CMakeFiles/WaferProb.dir/flags.make
 src/libWaferProb/CMakeFiles/WaferProb.dir/Handler.cpp.o: ../src/libWaferProb/Handler.cpp
@@ -195,8 +195,8 @@ WaferProb_OBJECTS = \
 "CMakeFiles/WaferProb.dir/Helper.cpp.o" \
 "CMakeFiles/WaferProb.dir/ControllerBase.cpp.o" \
 "CMakeFiles/WaferProb.dir/ControllerZaber.cpp.o" \
-"CMakeFiles/WaferProb.dir/MotionController.cpp.o" \
 "CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o" \
+"CMakeFiles/WaferProb.dir/MotionController.cpp.o" \
 "CMakeFiles/WaferProb.dir/Handler.cpp.o"
 
 # External object files for target WaferProb
@@ -205,8 +205,8 @@ WaferProb_EXTERNAL_OBJECTS =
 lib/libWaferProb.so: src/libWaferProb/CMakeFiles/WaferProb.dir/Helper.cpp.o
 lib/libWaferProb.so: src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerBase.cpp.o
 lib/libWaferProb.so: src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaber.cpp.o
-lib/libWaferProb.so: src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o
 lib/libWaferProb.so: src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o
+lib/libWaferProb.so: src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o
 lib/libWaferProb.so: src/libWaferProb/CMakeFiles/WaferProb.dir/Handler.cpp.o
 lib/libWaferProb.so: src/libWaferProb/CMakeFiles/WaferProb.dir/build.make
 lib/libWaferProb.so: lib/libZaber.so
@@ -221,8 +221,8 @@ src/libWaferProb/CMakeFiles/WaferProb.dir/build: lib/libWaferProb.so
 src/libWaferProb/CMakeFiles/WaferProb.dir/requires: src/libWaferProb/CMakeFiles/WaferProb.dir/Helper.cpp.o.requires
 src/libWaferProb/CMakeFiles/WaferProb.dir/requires: src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerBase.cpp.o.requires
 src/libWaferProb/CMakeFiles/WaferProb.dir/requires: src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaber.cpp.o.requires
-src/libWaferProb/CMakeFiles/WaferProb.dir/requires: src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.requires
 src/libWaferProb/CMakeFiles/WaferProb.dir/requires: src/libWaferProb/CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o.requires
+src/libWaferProb/CMakeFiles/WaferProb.dir/requires: src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o.requires
 src/libWaferProb/CMakeFiles/WaferProb.dir/requires: src/libWaferProb/CMakeFiles/WaferProb.dir/Handler.cpp.o.requires
 .PHONY : src/libWaferProb/CMakeFiles/WaferProb.dir/requires
 
