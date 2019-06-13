@@ -18,6 +18,14 @@ z_common.h
 string
 -
 
+../src/libWaferProb/include/ControllerZaber.h
+string
+-
+za_serial.h
+../src/libWaferProb/include/za_serial.h
+ControllerBase.h
+../src/libWaferProb/include/ControllerBase.h
+
 ../src/libWaferProb/include/ControllerZaberZ.h
 string
 -
@@ -32,17 +40,27 @@ string
 vector
 -
 
-/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerZaberZ.cpp
+../src/libWaferProb/include/MotionController.h
+ControllerBase.h
+../src/libWaferProb/include/ControllerBase.h
+ControllerZaber.h
+../src/libWaferProb/include/ControllerZaber.h
+ControllerZaberZ.h
+../src/libWaferProb/include/ControllerZaberZ.h
+
+/home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.cpp
+MotionController.h
+/home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.h
+Helper.h
+/home/amolnar/labRemoteMyClone/src/libWaferProb/Helper.h
 stdio.h
 -
-string.h
+string
+-
+sstream
 -
 vector
 -
-stdlib.h
+unistd.h
 -
-ControllerZaberZ.h
-/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerZaberZ.h
-Helper.h
-/home/amolnar/labRemoteMyClone/src/libWaferProb/Helper.h
 

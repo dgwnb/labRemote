@@ -36,6 +36,7 @@ int MotionController::connect() {
     return 0;
 }
 
+
 int MotionController::disconnect(){
     xy_ctrl->disconnect();
     z_ctrl->disconnect();
@@ -77,6 +78,18 @@ int MotionController::stop(){
     xy_ctrl->stop();
     z_ctrl->stop();
     return 0;
+}
+
+int MotionController::park(){
+	xy_ctrl->park();
+	z_ctrl->park();
+	return 0;
+}
+
+int MotionController::unpark(){
+	xy_ctrl->unpark();
+	z_ctrl->unpark();
+	return 0;
 }
 
 int MotionController::get_position(){
