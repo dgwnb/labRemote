@@ -91,7 +91,26 @@ void Handler::write(const string& cmd) {
 	  else if (action == "SM")
     {
         ctrl->set_center();
-    } else if (action == "SP")
+    }
+   //Added controls to test ZaberZ Start here
+    else if  (action == "ST") 
+    {
+	ctrl->stop();
+    }
+    else if (action == "GP")
+    {
+	ctrl->get_position();
+    }
+    else if (action == "PK")
+    {
+        ctrl->park();
+    }
+    else if (action == "UP")
+    {
+	ctrl->unpark();
+    }	
+   //Here ends added controls to test ZaberZ code
+    else if (action == "SP")
     {
         if (items.size() != 3){
             printf("argument of SP is wrong\n"
