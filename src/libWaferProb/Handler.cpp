@@ -37,7 +37,6 @@ void Handler::print_cmd(){
 }
 
 void Handler::write(const string& cmd) {
-    float unit_scale = 1000.;
     if(cmd.empty()){
         return;
     }
@@ -60,7 +59,7 @@ void Handler::write(const string& cmd) {
             return;
         }
         int axis = WaferProb::axis_number(items[1]);
-        ctrl->mv_abs(axis, unit_scale * atof(items[2].c_str()));
+        ctrl->mv_abs(axis, atof(items[2].c_str()));
     } else if (action == "MR")
     {
         if(items.size() != 3){
@@ -69,7 +68,7 @@ void Handler::write(const string& cmd) {
             return;
         }
         int axis = WaferProb::axis_number(items[1]);
-        ctrl->mv_rel(axis, unit_scale * atof(items[2].c_str()));
+        ctrl->mv_rel(axis, atof(items[2].c_str()));
     } else if (action == "SH")
     {
         ctrl->set_home();
@@ -104,7 +103,7 @@ void Handler::write(const string& cmd) {
             return;
         }
         int axis = WaferProb::axis_number(items[1]);
-        ctrl->set_speed(axis, unit_scale * atof(items[2].c_str()));
+        ctrl->set_speed(axis, atof(items[2].c_str()));
     }else if (action == "TEST"){
         vector<int> steps{20, 46, 73, 100, 126, 152, 179, 206, 226};
         if (items.size() != 2){
@@ -114,7 +113,7 @@ void Handler::write(const string& cmd) {
         }
         int axis = WaferProb::axis_number(items[1]);
         for(int step : steps){
-            ctrl->mv_abs(axis, unit_scale * step);
+            ctrl->mv_abs(axis,  step);
             sleep(10);
         }
     } else {

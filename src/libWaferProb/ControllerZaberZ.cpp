@@ -167,14 +167,12 @@ int ControllerZaberZ::unpark()
 
 
 int ControllerZaberZ::convert_mm_to_turns(float value){
-	// value should be in millimeter.
-	// turns: 1952000 turns
-	// length: 305 millimeter
-	return value * 1;
+		// To find out where this conversion rate came from look at References
+	return value * 11111;
 }
 
 float ControllerZaberZ::convert_turns_to_mm(float turns){
-	return turns*1 ; 
+	return turns*0.00009 ; 
 }
 
 void ControllerZaberZ::poll_until_idle(){
@@ -211,11 +209,11 @@ void ControllerZaberZ::poll_until_idle(){
 
 void ControllerZaberZ::find_max_min()
 {
-	write("/1 mv max\n");
+	write("/1 move max\n");
 	float m_zmax;
 	m_zmax= get_position();
 	printf("Hello: %2f\n", m_zmax);
-	write("/1 mv min\n");
+	write("/1 move min\n");
 	float m_zmin;
 	m_zmin= get_position();
 
