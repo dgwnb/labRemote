@@ -277,7 +277,7 @@ Item {
                                             if(isContact) go_separate()
                                             txt_speed_x.text = 0.5
                                             backend.speedX = txt_speed_x.text.toString()
-                                            backend.run_cmd("SCAN X")
+                                            backend.run_cmd("SX")
                                         }
                                     }
 //                                    MenuItem {

@@ -142,6 +142,10 @@ int ControllerZaberZ::set_center()
 	return 0;
 }
 
+int ControllerZaberZ::scanx()
+{
+	return 0;
+}
 
 int ControllerZaberZ::park(){
 	int status = write("/tools parking park\n");

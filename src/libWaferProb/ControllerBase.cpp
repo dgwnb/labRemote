@@ -61,7 +61,11 @@ int ControllerBase::run_cmd(const string& cmd) {
         axis = WaferProb::axis_number(items[1]);
         this->mv_rel(axis, atof(items[2].c_str()));
 
-    } else if (action == "SH")
+    } else if (action == "SX")
+	{
+		this->scanx();
+		
+	} else if (action == "SH")
     {
         this->set_home();
         axis = 3;

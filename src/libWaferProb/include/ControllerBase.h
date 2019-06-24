@@ -32,6 +32,7 @@ public:
 
     virtual int connect() = 0;
     virtual int disconnect() = 0;
+	virtual int scanx()=0;
 
     virtual int write(const string& cmd) = 0; // send command to device
 
