@@ -56,20 +56,6 @@ ControllerZaber.h
 ControllerZaberZ.h
 ../src/libWaferProb/include/ControllerZaberZ.h
 
-/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerZaberZ.cpp
-stdio.h
--
-string.h
--
-vector
--
-stdlib.h
--
-ControllerZaberZ.h
-/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerZaberZ.h
-Helper.h
-/home/amolnar/labRemoteMyClone/src/libWaferProb/Helper.h
-
 /home/amolnar/labRemoteMyClone/src/libWaferProb/Handler.cpp
 Handler.h
 /home/amolnar/labRemoteMyClone/src/libWaferProb/Handler.h
@@ -84,23 +70,5 @@ stdio.h
 stdlib.h
 -
 unistd.h
--
-
-/home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.cpp
-MotionController.h
-/home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.h
-Helper.h
-/home/amolnar/labRemoteMyClone/src/libWaferProb/Helper.h
-stdio.h
--
-string
--
-sstream
--
-vector
--
-unistd.h
--
-iostream
 -
 

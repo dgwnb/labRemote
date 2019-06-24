@@ -272,7 +272,7 @@ Item {
                                         }
                                     }
                                     MenuItem {
-                                        text: "SCAN X"
+                                        text: "Scan X Right"
                                         onTriggered: {
                                             if(isContact) go_separate()
                                             txt_speed_x.text = 0.5
@@ -280,6 +280,16 @@ Item {
                                             backend.run_cmd("SX")
                                         }
                                     }
+                                    MenuItem {
+                                        text:"Scan X Left"
+                                        onTriggered: {
+                                            if(isContact) go_separate()
+                                            txt_speed_x.text=0.5
+                                            backend.speedX = txt_speed_x.text.toString()
+                                            backend.run_cmd("SB")
+                                        }
+                                    }
+
 //                                    MenuItem {
 //                                        text: "Calibrate"
 //                                        onTriggered: {

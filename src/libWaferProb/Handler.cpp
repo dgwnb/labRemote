@@ -95,7 +95,11 @@ void Handler::write(const string& cmd) {
 	} 
       else if (action =="SX")
 	{
-		ctrl->scanx();
+		ctrl->scan_x_right();
+	}
+	 else if (action =="SB")
+    {
+		ctrl->scan_x_left();
 	}
 	  else if (action == "SM")
     {

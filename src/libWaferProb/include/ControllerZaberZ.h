@@ -34,7 +34,8 @@ public: // implement controller's interface
 	int mv_abs(int axis, float value); // move w.r.t home-position
 	int mv_rel(int axis, float value); // move w.r.t current-position
 	int stop();
-	int scanx();
+	int scan_x_right();
+	int scan_x_left();
 
 	// get current position
 	int get_position();

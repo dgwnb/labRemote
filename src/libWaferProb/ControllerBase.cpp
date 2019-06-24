@@ -63,9 +63,13 @@ int ControllerBase::run_cmd(const string& cmd) {
 
     } else if (action == "SX")
 	{
-		this->scanx();
+		this->scan_x_right();
 		
-	} else if (action == "SH")
+	} else if (action == "SB")
+	{
+			this->scan_x_left();
+	
+	}  else if (action == "SH")
     {
         this->set_home();
         axis = 3;

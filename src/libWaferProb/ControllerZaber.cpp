@@ -101,10 +101,15 @@ int ControllerZaber::mv_rel(int axis, float value){
     return write(cmd);
 }
 
-int ControllerZaber::scanx(){
-    write("/1 1 move min\n");
-	poll_until_idle();
-	write("1 1 move max\n");
+int ControllerZaber::scan_x_right(){
+	//Here the directions are flipped as we want the microscope to see things to the right of it. Meaning the platform is moving left
+	write_with_reply("/1 1 move max\n");
+	return 0;
+}
+
+int ControllerZaber::scan_x_left(){
+    //Similairly, the directions are flipped as we want the microscope to see things to the left of it. Meaning the platform is moving right
+	write_with_reply("/1 1 move min\n");
 	return 0;
 }
 int ControllerZaber::get_position()

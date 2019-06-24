@@ -31,7 +31,8 @@ public:
 
     int get_position(int axis);
     int get_position();
-	int scanx();
+	int scan_x_right();
+	int scan_x_left();
 	int park();
 	int unpark();
 

@@ -142,7 +142,12 @@ int ControllerZaberZ::set_center()
 	return 0;
 }
 
-int ControllerZaberZ::scanx()
+int ControllerZaberZ::scan_x_right()
+{
+	return 0;
+}
+
+int ControllerZaberZ::scan_x_left()
 {
 	return 0;
 }

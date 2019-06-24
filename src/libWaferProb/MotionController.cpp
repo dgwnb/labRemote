@@ -100,9 +100,14 @@ int MotionController::get_position(){
     return 0;
 }
 
-int MotionController::scanx(){
-    xy_ctrl->scanx();
+int MotionController::scan_x_right(){
+    xy_ctrl->scan_x_right();
     return 0;
+}
+
+int MotionController::scan_x_left(){
+	xy_ctrl->scan_x_left();
+	return 0;
 }
 
 int MotionController::get_pos_xy(){

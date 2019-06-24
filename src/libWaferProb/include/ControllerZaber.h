@@ -41,7 +41,8 @@ public: // implement controller's interface
 
     int set_home();
     int set_center();
-    int scanx();
+    int scan_x_right();
+	int scan_x_left();
     const char* device_name();
 
 public:
