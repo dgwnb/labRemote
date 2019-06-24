@@ -22,7 +22,7 @@ var margin = 5
 
 // hard coded path that houses captured images
 // var image_saved_path = "/Users/xju/Documents/2017/RD53/code/labRemote/gui/WaferProberGUI/captured_image/"
-var image_saved_path = "/home/pixel/Documents/probing_station/code/labRemote/gui/WaferProberGUI/captured_image/"
+var image_saved_path = "/home/amolnar/labRemoteMyClone/gui/WaferProberGUI/snapshot_images"
 
 
 var add =  (
@@ -182,7 +182,7 @@ var real_chip_table = {
 // a table that stores a height different between the first chip(1-6) and other chips.
 var height_table = {
     // input_name: "",
-    input_name: "/home/pixel/Documents/probing_station/code/labRemote/gui/WaferProberGUI/height_table.txt",
+    input_name: "/home/amolnar/labRemoteMyClone/gui/WaferProberGUI/height_table.txt",
     table: {},
     refID: "1-6",
     read: function (input_text) {
