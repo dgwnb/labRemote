@@ -101,6 +101,12 @@ int ControllerZaber::mv_rel(int axis, float value){
     return write(cmd);
 }
 
+int ControllerZaber::scanx(){
+    write("/1 1 move min\n");
+	poll_until_idle();
+	write("1 1 move max\n");
+	return 0;
+}
 int ControllerZaber::get_position()
 {
     if(port < 0){

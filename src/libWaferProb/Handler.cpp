@@ -1,6 +1,7 @@
 #include "Handler.h"
 #include "Helper.h"
 
+#include <iostream>
 #include <vector>
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,8 +29,9 @@ void Handler::print_cmd(){
             "TESTX --> move x from 0 to 305 with pre-defined steps\n"
 			"UP --> unparks all of the zaber devices\n"
 			"PK --> parks all of the zaber devices\n"
-			"ST --> stops all of the zaber devices i think not one hundred percent sure\n"
-			"GP --> gets the position of all the zaber devices i think no one hundred percent sure\n"
+			"ST --> stops all of the zaber devices\n"
+			"GP --> gets the position of all the zaber devices\n"
+            "SX --> Scan X direction\n"
             "----------------------------------------------------------\n"
             // "MVC X P --> move to positive x-axis direction, continuously\n" 
             // "MVC X N --> move to negative x-axis direction, continuously\n"  
@@ -50,6 +52,8 @@ void Handler::write(const string& cmd) {
     }
 
     const string& action(items[0]);
+//	std::cout<<items[0];
+//	std::cout<<items[1];
     // Check each case..
     if (action == "MA")
     {
@@ -73,7 +77,6 @@ void Handler::write(const string& cmd) {
     {
         ctrl->set_home();
     }
-	  //Added controls to test ZaberZ starts here
 	  else if (action == "ST")
 	{
 		ctrl->stop();
@@ -89,8 +92,11 @@ void Handler::write(const string& cmd) {
 	  else if (action == "UP")
 	{
 	    ctrl->unpark();
+	} 
+      else if (action =="SX")
+	{
+		ctrl->scanx();
 	}
-    // Here ends added controls to test ZaberZ code 
 	  else if (action == "SM")
     {
         ctrl->set_center();

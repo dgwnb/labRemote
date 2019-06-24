@@ -114,6 +114,7 @@ ApplicationWindow {
 
         Component.onCompleted: {
             xyDeviceName = Settings.xy_device.toString()
+            zDeviceName = Settings.z_device.toString()
         }
 
         onInfoUpdated: {

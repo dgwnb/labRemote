@@ -50,17 +50,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 INCLUDEPATH += ../../src/libWaferProb/include
-INCLUDEPATH += ../../src/libGalil/include
 INCLUDEPATH += ../../src/libZaber/include
 
-unix:!macx{
-    LIBS += -L../../build/lib -lWaferProb -lgclibo -lgclib
-}
-
-macx: {
-    QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.13
-    LIBS += -L../../build/lib -lWaferProb -L/Applications/gclib/dylib -lgclib.0 -lgclibo.0
-}
+LIBS += -L../../build/lib -lWaferProb
 
 unix: INCLUDEPATH += /usr/local/include
 unix: LIBS += -L/usr/local/lib -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_videoio -lopencv_imgcodecs -lopencv_features2d -lopencv_xfeatures2d -lopencv_video -lopencv_calib3d -lopencv_flann

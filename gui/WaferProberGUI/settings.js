@@ -2,6 +2,7 @@
 .pragma library
 
 var xy_device = "/dev/ttyACM0"
+var z_device  = "/dev/ttyUSB1"
 
 
 // default speed [mm/s]

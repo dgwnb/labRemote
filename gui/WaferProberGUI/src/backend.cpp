@@ -69,7 +69,7 @@ void MotionWorker::run()
 BackEnd::BackEnd(QObject *parent) : QObject(parent)
 {
 
-    m_ctrl = 0;
+    m_ctrl = nullptr;
     m_current_x = m_current_y = m_current_z = -1.0;
     m_z_sep = 0.700; // unit of mm.
     m_z_isContact = false;
@@ -78,12 +78,13 @@ BackEnd::BackEnd(QObject *parent) : QObject(parent)
 
 int BackEnd::connectDevice()
 {
-    if(m_ctrl == 0) {
-
-        const char* deviceName = m_xyDeviceName.toLatin1().data();
+    if(m_ctrl == nullptr) {
+        std::string xy_str(m_xyDeviceName.toStdString());
+        std::string z_str(m_zDeviceName.toStdString());
         // One can changes to any other motion controller that
         // is derived from ControllerBase.
-        m_ctrl = new MotionController(deviceName);
+        m_ctrl = new MotionController(xy_str.c_str(), z_str.c_str());
+
     }
     int status = m_ctrl->connect();
     if(status == 0){

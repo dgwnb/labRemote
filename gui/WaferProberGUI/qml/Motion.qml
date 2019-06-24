@@ -50,8 +50,9 @@ Item {
                 anchors.fill: parent
                 Button {
                     text: "connect"
-                    onClicked: {                        
+                    onClicked: {
                         connectResult = backend.connectDevice()
+
                         if (connectResult == 0) {
                             output.append("Connection is established\n")
 
@@ -265,8 +266,9 @@ Item {
                                         text: "Load Wafer"
                                         onTriggered: {
                                             if(isContact) go_separate()
-                                            backend.run_cmd("MA X 152.5")
-                                            backend.run_cmd("MA Y 305")
+                                            backend.run_cmd("SM")
+//                                            backend.run_cmd("MA X 152.5")
+//                                            backend.run_cmd("MA Y 305")
                                         }
                                     }
                                     MenuItem {
@@ -626,7 +628,7 @@ Item {
                         }
                    }
                     GroupBox{
-                        title: "controller"
+                        title: "One click move distance by one second of speed; a delay is added."
                         Layout.fillWidth: true
                         RowLayout {
                             anchors.fill: parent
@@ -705,6 +707,9 @@ Item {
             btn_is_contact.checked = true
             checkedSeparation = true
             backend.IsAtContact = true
+            // once contact position is determined,
+            // set speed to the separation distance,
+            // so that no need to wait more..
             txt_speed_z.text = txt_sep_z.text
             backend.speedZ = txt_sep_z.text
         }

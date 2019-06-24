@@ -53,6 +53,7 @@ class BackEnd : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString xyDeviceName READ xyDeviceName WRITE setXyDeviceName NOTIFY xyDeviceNameChanged)
+    Q_PROPERTY(QString zDeviceName READ zDeviceName WRITE setZDeviceName NOTIFY zDeviceNameChanged)
 
     // set speed
     Q_PROPERTY(float speedX READ getSpeedX WRITE setSpeedX NOTIFY speedXSet)
@@ -96,6 +97,11 @@ public:
     void setXyDeviceName(QString& name) {
         m_xyDeviceName = name;
         emit xyDeviceNameChanged();
+    }
+    QString zDeviceName(){return m_zDeviceName;}
+    void setZDeviceName(QString& name){
+        m_zDeviceName = name;
+        emit zDeviceNameChanged();
     }
 
     void setSpeedX(float speed_x);
@@ -156,6 +162,7 @@ public slots:
 
 signals:
     void xyDeviceNameChanged();
+    void zDeviceNameChanged();
     void deviceConnected();
 
     void positionChanged(int axis);
@@ -175,6 +182,7 @@ signals:
 
 private:
     QString m_xyDeviceName;
+    QString m_zDeviceName;
     ControllerBase* m_ctrl;
 
     float m_current_x;

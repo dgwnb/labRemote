@@ -8,11 +8,13 @@
 #include <vector>
 
 #include <unistd.h>  // for sleep()
+#include <iostream>
 
 using namespace std;
 MotionController::MotionController(const char* dn_1, const char* dn_2):
     ControllerBase()
 {
+	cout <<"[MotionController] connecting xy: " << dn_1 << ", z: " << dn_2 << endl;
    	xy_ctrl = new ControllerZaber(dn_1);
 	z_ctrl =  new ControllerZaberZ(dn_2);
     m_position[0] = m_position[1] = m_position[2] = -1;
@@ -95,6 +97,11 @@ int MotionController::unpark(){
 int MotionController::get_position(){
     get_pos_xy();
     get_pos_z();
+    return 0;
+}
+
+int MotionController::scanx(){
+    xy_ctrl->scanx();
     return 0;
 }
 

@@ -14,7 +14,8 @@ ControllerZaberZ::ControllerZaberZ(const char* device_name):
 	dn(device_name)
 {
 	port = -1;
-	m_position[0] = m_position[1] = DEFAULT_ZABER_POS;
+	m_position[0] = m_position[1] = DEFAULT_BAD_XY_POS;
+	m_position[2] = DEFAULT_Z_POS;
 }
 
 
@@ -125,13 +126,9 @@ int ControllerZaberZ::get_position()
 	//  analyze response data.
 	string data(decoded_reply.response_data);
 	if(strncmp(decoded_reply.response_data, "BADDATA", 7) == 0){
-		m_position[0] = m_position[1] = DEFAULT_ZABER_POS;
+		m_position[2] = DEFAULT_Z_POS;
 	} else {
-		vector<string> raw_items;
-		WaferProb::tokenizeString(data, ' ', raw_items);
-		for(int i = 0; i < (int) raw_items.size(); i++){
-			m_position[i] = (int)(convert_turns_to_mm(atof(raw_items.at(i).c_str()))*1000) / 1000.;
-		}
+		m_position[2] = (int)(convert_turns_to_mm(atof(data.c_str()))*1000) / 1000.;
 	}
 	return 0;
 }

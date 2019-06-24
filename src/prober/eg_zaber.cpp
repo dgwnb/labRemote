@@ -61,7 +61,7 @@ int main(int argc, char** argv)
     // give the port number
     if (argc < 2){
         printf("%s device_name\n", argv[0]);
-        printf("e.g: /dev/ttyACM0, /dev/tty.usbmodem1411\n");
+        printf("e.g: /dev/ttyACM0, /dev/tty.usbmodem1411, /dev/ttyUSB1\n");
         return 1;
     }
     z_port port;
