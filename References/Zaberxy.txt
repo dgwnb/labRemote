@@ -1,0 +1,1 @@
+X max position in absolute posiition in turns is 1952000 and the minimum position is 0.
