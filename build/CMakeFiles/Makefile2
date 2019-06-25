@@ -61,7 +61,6 @@ CMAKE_BINARY_DIR = /home/amolnar/labRemoteMyClone/build
 # Convenience name for "all" pass in the directory.
 src/all: src/libGPIB/all
 src/all: src/libDevCom/all
-src/all: src/libGalil/all
 src/all: src/libImageRec/all
 src/all: src/libZaber/all
 src/all: src/libWaferProb/all
@@ -71,7 +70,6 @@ src/all: src/prober/all
 # Convenience name for "clean" pass in the directory.
 src/clean: src/libGPIB/clean
 src/clean: src/libDevCom/clean
-src/clean: src/libGalil/clean
 src/clean: src/libImageRec/clean
 src/clean: src/libZaber/clean
 src/clean: src/libWaferProb/clean
@@ -81,7 +79,6 @@ src/clean: src/prober/clean
 # Convenience name for "preinstall" pass in the directory.
 src/preinstall: src/libGPIB/preinstall
 src/preinstall: src/libDevCom/preinstall
-src/preinstall: src/libGalil/preinstall
 src/preinstall: src/libImageRec/preinstall
 src/preinstall: src/libZaber/preinstall
 src/preinstall: src/libWaferProb/preinstall
@@ -187,21 +184,6 @@ src/libDevCom/CMakeFiles/DevCom.dir/clean:
 # clean rule for target.
 clean: src/libDevCom/CMakeFiles/DevCom.dir/clean
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory src/libGalil
-
-# Convenience name for "all" pass in the directory.
-src/libGalil/all:
-.PHONY : src/libGalil/all
-
-# Convenience name for "clean" pass in the directory.
-src/libGalil/clean:
-.PHONY : src/libGalil/clean
-
-# Convenience name for "preinstall" pass in the directory.
-src/libGalil/preinstall:
-.PHONY : src/libGalil/preinstall
 
 #=============================================================================
 # Directory level rules for directory src/libImageRec

@@ -36,7 +36,6 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/amolnar/labRemoteMyClone/build/src/libGPIB/cmake_install.cmake")
   INCLUDE("/home/amolnar/labRemoteMyClone/build/src/libDevCom/cmake_install.cmake")
-  INCLUDE("/home/amolnar/labRemoteMyClone/build/src/libGalil/cmake_install.cmake")
   INCLUDE("/home/amolnar/labRemoteMyClone/build/src/libImageRec/cmake_install.cmake")
   INCLUDE("/home/amolnar/labRemoteMyClone/build/src/libZaber/cmake_install.cmake")
   INCLUDE("/home/amolnar/labRemoteMyClone/build/src/libWaferProb/cmake_install.cmake")
