@@ -19,7 +19,7 @@ using namespace std;
 Q_DECLARE_METATYPE(cv::Mat)
 ObjectDetection::ObjectDetection(QObject *parent) : QObject(parent)
 {
-    m_object = cv::imread("/home/pixel/Documents/probing_station/code/labRemote/gui/WaferProberGUI/images/RD53A_template_rotated.png",
+    m_object = cv::imread("/home/amolnar/labRemoteMyClone/gui/WaferProberGUI/images/RD53A_template_rotated.png",
                            cv::IMREAD_GRAYSCALE);
     m_sourceLocation.reserve(4);
 }

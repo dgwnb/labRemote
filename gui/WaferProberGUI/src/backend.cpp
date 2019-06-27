@@ -119,18 +119,21 @@ void BackEnd::get_pos_xy(){
 }
 
 void BackEnd::setSpeedX(float speed_x){
+    stop();
     m_speed_x = speed_x;
     m_ctrl->set_speed(0, m_speed_x);
     emit speedXSet();
 }
 
 void BackEnd::setSpeedY(float speed_y){
+    stop();
     m_speed_y = speed_y;
     m_ctrl->set_speed(1, m_speed_y);
     emit speedYSet();
 }
 
 void BackEnd::setSpeedZ(float speed_z){
+    stop();
     m_speed_z = speed_z;
     m_ctrl->set_speed(2, m_speed_z);
     emit speedZSet();

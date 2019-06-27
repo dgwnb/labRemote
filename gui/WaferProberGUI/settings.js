@@ -144,7 +144,7 @@ var find_chip_name = function(x_, y_){
 // update each chip with: update_chip_table()
 
 var real_chip_table = {
-    input_name: "/home/pixel/Documents/probing_station/code/labRemote/gui/WaferProberGUI/real_chip_table.txt",
+    input_name: "/home/amolnar/labRemoteMyClone/gui/WaferProberGUI/real_chip_table.txt",
     table: {},
     read: function (input_text) {
         var lines = input_text.split('\n')

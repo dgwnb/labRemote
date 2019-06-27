@@ -6,9 +6,33 @@
 
 #IncludeRegexTransform: 
 
+../src/libWaferProb/../libZaber/include/z_common.h
+windows.h
+-
+
+../src/libWaferProb/../libZaber/include/za_serial.h
+z_common.h
+../src/libWaferProb/../libZaber/include/z_common.h
+
 ../src/libWaferProb/include/ControllerBase.h
 string
 -
+
+../src/libWaferProb/include/ControllerZaber.h
+string
+-
+za_serial.h
+../src/libWaferProb/include/za_serial.h
+ControllerBase.h
+../src/libWaferProb/include/ControllerBase.h
+
+../src/libWaferProb/include/ControllerZaberZ.h
+string
+-
+za_serial.h
+../src/libWaferProb/include/za_serial.h
+ControllerBase.h
+../src/libWaferProb/include/ControllerBase.h
 
 ../src/libWaferProb/include/Helper.h
 string
@@ -16,13 +40,31 @@ string
 vector
 -
 
-/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerBase.cpp
-ControllerBase.h
-/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerBase.h
-Helper.h
-/home/amolnar/labRemoteMyClone/src/libWaferProb/Helper.h
+/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerZaber.cpp
 stdio.h
 -
-sstream
+string.h
 -
+vector
+-
+stdlib.h
+-
+ControllerZaber.h
+/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerZaber.h
+Helper.h
+/home/amolnar/labRemoteMyClone/src/libWaferProb/Helper.h
+
+/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerZaberZ.cpp
+stdio.h
+-
+string.h
+-
+vector
+-
+stdlib.h
+-
+ControllerZaberZ.h
+/home/amolnar/labRemoteMyClone/src/libWaferProb/ControllerZaberZ.h
+Helper.h
+/home/amolnar/labRemoteMyClone/src/libWaferProb/Helper.h
 

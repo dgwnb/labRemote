@@ -81,7 +81,7 @@ string* ControllerZaber::write_with_reply(const string& cmd)
 
 int ControllerZaber::set_speed(int axis, float value)
 {
-    int steps = convert_mm_to_turns(value);
+	int steps = convert_mm_to_turns(value);
     char cmd[256];
     sprintf(cmd, "/1 %d set maxspeed %d\n", axis, steps);
     return write(cmd);
