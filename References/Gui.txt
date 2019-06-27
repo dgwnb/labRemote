@@ -1,0 +1,18 @@
+Here contains general notes about the gui:
+
+The yoffset is defined to be -0.3. And only when concerning the chips does it seem to be added into the code. 
+dy here is defined to be dy-=yoffset or dy-=-0.3. The only two locations I found where yoffset was present was when calibrating the xy and when doing the object detection/correctionGenerated. I could find no comments to explain why this exists.
+
+Go 2 chip:
+Go 2 chip is only activated when xy is calibrated. Firstly what it does is seperate the probe card from the wafer if they are in contanct.
+Then it calls the function go2chip, which essentially finds the chip we have input and makes the probe station move to it.
+If with correction is on it runs the command endchip which emits the signal that the chip has arrived. 
+It also finds the height of that chip using the height table and moves to that height.
+
+To find out what chip to move to it looks at it uses a function called find_chip_number but this simply splits the input that the user gives into two seperate numbers.
+Ie if we give in 5-6 it seperated the two. 
+
+Calibrate Z:
+When the calibrate Z button is pushed it runs the function autoZcal.start. Here autoZcal is the id for a variable of the clazz Calibrate Z. 
+When we call autoZcal.start it does the following:
+It checks to see if a bunch of pointers are intiliazed and does some diagnostics. And then if m_worker exists it does (*m_worker).startRun(). This is a slot that sets m_running to true.This is required to run the CalibrateWorker.
