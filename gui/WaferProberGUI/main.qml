@@ -29,6 +29,7 @@ ApplicationWindow {
     property var with_correction: false
     property var calibrateAllChips: false
     property var yOffSet: -0.3
+    property variant chipzigzag: [1,2,3,11,10,9,8,7,6,5,4,12,13,14,15,16,17,18,19,20,21,32,31,30,29,28,27,26,25,24,23,22,33,34,35,36,37,38,39,40,41,42,43,44,56,55,54,53,52,51,50,49,48,47,46,45,57,58,59,60,61,62,63,64,65,66,67,77,76,75,74,73,72,71,70,69,68,78,79,80,81,82,83,84,85,90,89,88,87,86]
 
     // handy functions
     function go2chip(chip_id){
@@ -51,7 +52,20 @@ ApplicationWindow {
     function goPrevChip(){
         go2chip(Settings.find_chip_number(current_chip_id.text) - 1 )
     }
+    //function delay(duration) {
+    //    timer = new Timer()
+    //    timer.interval = delayTime
+    //    timer.repeat = false
+    //   timer.start()
+    //}
+    function probeallchips(){
+        var numberofchips= 90
+        for (var i=0;i<numberofchips;i++){
+            go2chip(chipzigzag[i])
+           // WILL BE ADDING MORE TO THIS TO FINISH OFF THIS FUNCTION FOR AUTOMATIC STEPPING
 
+            }
+        }
     function update_position(){
         txt_pos_x.text = Number(backend.getPosX()).toLocaleString(Qt.locale("en_US"), 'f', 3)
         txt_pos_y.text = Number(backend.getPosY()).toLocaleString(Qt.locale("en_US"), 'f', 3)

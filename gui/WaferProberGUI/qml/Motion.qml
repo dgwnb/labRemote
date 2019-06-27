@@ -369,6 +369,18 @@ Item {
                                 ToolTip.delay: 1000
                                 ToolTip.timeout: 4000
                             }
+                            Button{
+                                id: test_butt
+                                enabled: isCalibrated
+                                text: "PROBE ALL CHIPS"
+                                onClicked: {
+                                    probeallchips()
+                                }
+                                ToolTip.text: qsTr("Click to probe all chips")
+                                ToolTip.visible: hovered
+                                ToolTip.delay: 1000
+                                ToolTip.timeout: 4000
+                            }
                         }
                     }
 
@@ -471,13 +483,8 @@ Item {
                                 ToolTip.delay: 1000
                                 ToolTip.timeout: 4000
                             }
-                           Button{
-                               id: test_butt
-                               text: "Do Nothing"
-                           }
-                        }
-
                     }
+                 }
 
 
                     // move x-y station
