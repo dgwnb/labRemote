@@ -473,12 +473,7 @@ Item {
                             }
                            Button{
                                id: test_butt
-                               text: "Update Speed Only DO MOVEMENT STOPPED"
-                               onClicked: {
-                                    backend.speedX = txt_speed_x.text.toString()
-                                    backend.speedY = txt_speed_y.text.toString()
-
-                               }
+                               text: "Do Nothing"
                            }
                         }
 
@@ -564,9 +559,9 @@ Item {
                                 selectByMouse: true
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
-                                //onEditingFinished: {
-                                 //   backend.speedX = txt_speed_x.text.toString()
-                                //}
+                                onEditingFinished: {
+                                    backend.speedX = txt_speed_x.text.toString()
+                                }
                             }
                             TextField {
                                 id: txt_speed_y
@@ -574,9 +569,9 @@ Item {
                                 selectByMouse: true
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
-                                //onEditingFinished: {
-                                 //   backend.speedY = txt_speed_y.text.toString()
-                                //}
+                                onEditingFinished: {
+                                    backend.speedY = txt_speed_y.text.toString()
+                                }
                             }
                             // set increment
                             Label {
