@@ -2,6 +2,8 @@
 /home/amolnar/labRemoteMyClone/build/src/libGPIB/CMakeFiles/GPIB.dir
 /home/amolnar/labRemoteMyClone/build/src/libWaferProb/CMakeFiles/WaferProb.dir
 /home/amolnar/labRemoteMyClone/build/src/libZaber/CMakeFiles/Zaber.dir
+/home/amolnar/labRemoteMyClone/build/src/prober/CMakeFiles/agilent_test.dir
 /home/amolnar/labRemoteMyClone/build/src/prober/CMakeFiles/eg_zaber.dir
+/home/amolnar/labRemoteMyClone/build/src/prober/CMakeFiles/lowering_test.dir
 /home/amolnar/labRemoteMyClone/build/src/prober/CMakeFiles/motion_controller.dir
 /home/amolnar/labRemoteMyClone/build/src/prober/CMakeFiles/test_opencv_camera.dir

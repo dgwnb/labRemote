@@ -212,16 +212,10 @@ OpenCV_LIB_DIR_DBG:PATH=
 OpenCV_LIB_DIR_OPT:PATH=
 
 //Dependencies for the target
-WaferProb_LIB_DEPENDS:STATIC=general;Zaber;
+WaferProb_LIB_DEPENDS:STATIC=general;Zaber;general;GPIB;
 
 //Dependencies for target
 Zaber_LIB_DEPENDS:STATIC=
-
-//Path to a file.
-gclib_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-gclib_LIBRARY:FILEPATH=gclib_LIBRARY-NOTFOUND
 
 //Value Computed by CMake
 labRemote_BINARY_DIR:STATIC=/home/amolnar/labRemoteMyClone/build
@@ -385,8 +379,4 @@ OpenCV_CONFIG_PATH-ADVANCED:INTERNAL=1
 OpenCV_LIB_DIR_DBG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OpenCV_LIB_DIR_OPT
 OpenCV_LIB_DIR_OPT-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gclib_INCLUDE_DIR
-gclib_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gclib_LIBRARY
-gclib_LIBRARY-ADVANCED:INTERNAL=1
 

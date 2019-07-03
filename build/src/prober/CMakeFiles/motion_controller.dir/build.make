@@ -87,6 +87,7 @@ bin/motion_controller: src/prober/CMakeFiles/motion_controller.dir/build.make
 bin/motion_controller: lib/libZaber.so
 bin/motion_controller: lib/libWaferProb.so
 bin/motion_controller: lib/libZaber.so
+bin/motion_controller: lib/libGPIB.so
 bin/motion_controller: src/prober/CMakeFiles/motion_controller.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../bin/motion_controller"
 	cd /home/amolnar/labRemoteMyClone/build/src/prober && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/motion_controller.dir/link.txt --verbose=$(VERBOSE)

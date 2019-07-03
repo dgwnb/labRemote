@@ -12,12 +12,14 @@ SET(CMAKE_CXX_COMPILER_ID "GNU")
 SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/amolnar/labRemoteMyClone/build/src/libZaber/CMakeFiles/Zaber.dir/DependInfo.cmake"
   "/home/amolnar/labRemoteMyClone/build/src/libWaferProb/CMakeFiles/WaferProb.dir/DependInfo.cmake"
+  "/home/amolnar/labRemoteMyClone/build/src/libGPIB/CMakeFiles/GPIB.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../src/prober/../libZaber/include"
   "../src/prober/../libWaferProb/include"
+  "../src/prober/../libGPIB/include"
   "../src/prober/../libImageRec/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

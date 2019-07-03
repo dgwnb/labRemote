@@ -21,13 +21,13 @@
 using namespace std;
 
 class Handler {
-private:
+protected:
     MotionController* ctrl;
     // vector<string>* supported_actions;
 
 public:
     Handler();
-    ~Handler();
+    virtual ~Handler();
     void write(const string& cmd);
     void print_cmd();
 };

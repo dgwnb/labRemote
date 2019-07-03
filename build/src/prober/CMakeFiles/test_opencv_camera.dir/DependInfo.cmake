@@ -16,6 +16,7 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../src/prober/../libZaber/include"
   "../src/prober/../libWaferProb/include"
+  "../src/prober/../libGPIB/include"
   "../src/prober/../libImageRec/include"
   "/usr/local/include/opencv"
   "/usr/local/include"

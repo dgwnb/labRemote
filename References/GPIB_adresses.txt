@@ -1,0 +1,9 @@
+This document simply gives the GPIB adress associated with the different lab instruments
+
+1: Bottom kiethley of the stck
+2: None as far as I know
+3: 2nd to bottom Kiethley on the stack
+4: None as far as I know
+5: Hewlet Packared 34410A which is 4 up
+6: None as far as I know
+7: The agilent E3648a
