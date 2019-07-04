@@ -15,8 +15,6 @@
 Handler_agilent::Handler_agilent(std::string str, unsigned int num)
 	: ps(str, num)
 {
-    ctrl = new MotionController("/dev/ttyACM0", "/dev/ttyUSB1");
-    ctrl->connect();
 	ps.turnOn();
 	//connects the motion controllers and turns on and intiliazes agilent
 }
@@ -38,8 +36,9 @@ void Handler_agilent::print_cmd(){
 			"PK --> parks all of the zaber devices\n"
 			"ST --> stops all of the zaber devices\n"
 			"GP --> gets the position of all the zaber devices\n"
-            "SX --> Scan X direction\n"
-			"LC --> Lower to chip\n"
+            "SX --> Scan X direction to the right\n"
+			"SB --> Scan the X direction to the left\n"
+			"LC x --> Lower to chip till in contact or until z controller raised x*10 microns \n"
             "----------------------------------------------------------\n"
             // "MVC X P --> move to positive x-axis direction, continuously\n" 
             // "MVC X N --> move to negative x-axis direction, continuously\n"  
@@ -61,8 +60,6 @@ void Handler_agilent::write(const string& cmd) {
     }
 
     const string& action(items[0]);
-//	std::cout<<items[0];
-//	std::cout<<items[1];
     // Check each case..
     if (action == "MA")
     {
@@ -136,11 +133,25 @@ void Handler_agilent::write(const string& cmd) {
             sleep(10);
         }
     }else if (action =="LC"){
-		for(int i=0;i<10;i++){
-			ctrl->mv_rel(2,1);
-			std::cout<<ps.getCurrent();
+		if (items.size()!=2){
+			std::cout << "Did not define how many steps of 10 microns desired\n";
+			return;
 		}
-
+		else{
+		 	int loops= atof(items[1].c_str());
+			for(int i=0;i<loops;i++){
+				std::cout<<ps.getCurrent()<<"\n";
+				double current= std::stod( ps.getCurrent());	
+				if (current>0)
+				{
+					ctrl->park();
+					break;
+				}
+				ctrl->mv_rel(2,0.01);
+				//Stod converts a string to a double	
+			}
+			ctrl->park();
+		}
 	}else {
         printf("%s not supported yet!\n", action.c_str());
         // print_cmd();

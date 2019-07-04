@@ -47,5 +47,8 @@ Zaber Z Travel:
 	Min: Position 0
 	Max: Position 209974
 
+
+	Is the new maximum I set the limit to 75765
+
 Zaber Z Conversion Rate:
 	10000 turns is 0.90 mm

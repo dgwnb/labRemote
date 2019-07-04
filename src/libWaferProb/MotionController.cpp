@@ -25,7 +25,7 @@ MotionController::~MotionController(){
 }
 
 int MotionController::connect() {
-    if(xy_ctrl->connect() != 0){ 
+   if(xy_ctrl->connect() != 0){ 
         return 1;
     }
 
@@ -121,6 +121,7 @@ int MotionController::get_pos_xy(){
 int MotionController::get_pos_z(){
     z_ctrl->get_position();
     m_position[2] = z_ctrl->m_position[2];
+	printf("z position: %.2f\n ", m_position[2]);
     return 0;
 }
 
