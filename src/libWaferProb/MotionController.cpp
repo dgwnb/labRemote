@@ -100,6 +100,11 @@ int MotionController::get_position(){
     return 0;
 }
 
+int MotionController::set_max_limit(float value){
+	z_ctrl->set_max_limit(value);
+	return 0;
+}
+
 int MotionController::scan_x_right(){
     xy_ctrl->scan_x_right();
     return 0;

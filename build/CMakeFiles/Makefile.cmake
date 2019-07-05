@@ -68,8 +68,8 @@ SET(CMAKE_DEPEND_INFO_FILES
   "src/libZaber/CMakeFiles/Zaber.dir/DependInfo.cmake"
   "src/libWaferProb/CMakeFiles/WaferProb.dir/DependInfo.cmake"
   "src/prober/CMakeFiles/agilent_test.dir/DependInfo.cmake"
+  "src/prober/CMakeFiles/chip_prober.dir/DependInfo.cmake"
   "src/prober/CMakeFiles/eg_zaber.dir/DependInfo.cmake"
-  "src/prober/CMakeFiles/lowering_test.dir/DependInfo.cmake"
   "src/prober/CMakeFiles/motion_controller.dir/DependInfo.cmake"
   "src/prober/CMakeFiles/test_opencv_camera.dir/DependInfo.cmake"
   )

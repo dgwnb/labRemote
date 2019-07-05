@@ -116,6 +116,20 @@ agilent_test/fast:
 .PHONY : agilent_test/fast
 
 # Convenience name for target.
+src/prober/CMakeFiles/chip_prober.dir/rule:
+	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f CMakeFiles/Makefile2 src/prober/CMakeFiles/chip_prober.dir/rule
+.PHONY : src/prober/CMakeFiles/chip_prober.dir/rule
+
+# Convenience name for target.
+chip_prober: src/prober/CMakeFiles/chip_prober.dir/rule
+.PHONY : chip_prober
+
+# fast build rule for target.
+chip_prober/fast:
+	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/chip_prober.dir/build.make src/prober/CMakeFiles/chip_prober.dir/build
+.PHONY : chip_prober/fast
+
+# Convenience name for target.
 src/prober/CMakeFiles/eg_zaber.dir/rule:
 	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f CMakeFiles/Makefile2 src/prober/CMakeFiles/eg_zaber.dir/rule
 .PHONY : src/prober/CMakeFiles/eg_zaber.dir/rule
@@ -128,20 +142,6 @@ eg_zaber: src/prober/CMakeFiles/eg_zaber.dir/rule
 eg_zaber/fast:
 	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/eg_zaber.dir/build.make src/prober/CMakeFiles/eg_zaber.dir/build
 .PHONY : eg_zaber/fast
-
-# Convenience name for target.
-src/prober/CMakeFiles/lowering_test.dir/rule:
-	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f CMakeFiles/Makefile2 src/prober/CMakeFiles/lowering_test.dir/rule
-.PHONY : src/prober/CMakeFiles/lowering_test.dir/rule
-
-# Convenience name for target.
-lowering_test: src/prober/CMakeFiles/lowering_test.dir/rule
-.PHONY : lowering_test
-
-# fast build rule for target.
-lowering_test/fast:
-	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/lowering_test.dir/build.make src/prober/CMakeFiles/lowering_test.dir/build
-.PHONY : lowering_test/fast
 
 # Convenience name for target.
 src/prober/CMakeFiles/motion_controller.dir/rule:
@@ -195,6 +195,30 @@ agilentRigolLike_example.cpp.s:
 	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/agilent_test.dir/build.make src/prober/CMakeFiles/agilent_test.dir/agilentRigolLike_example.cpp.s
 .PHONY : agilentRigolLike_example.cpp.s
 
+chip_prober.o: chip_prober.cpp.o
+.PHONY : chip_prober.o
+
+# target to build an object file
+chip_prober.cpp.o:
+	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/chip_prober.dir/build.make src/prober/CMakeFiles/chip_prober.dir/chip_prober.cpp.o
+.PHONY : chip_prober.cpp.o
+
+chip_prober.i: chip_prober.cpp.i
+.PHONY : chip_prober.i
+
+# target to preprocess a source file
+chip_prober.cpp.i:
+	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/chip_prober.dir/build.make src/prober/CMakeFiles/chip_prober.dir/chip_prober.cpp.i
+.PHONY : chip_prober.cpp.i
+
+chip_prober.s: chip_prober.cpp.s
+.PHONY : chip_prober.s
+
+# target to generate assembly for a file
+chip_prober.cpp.s:
+	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/chip_prober.dir/build.make src/prober/CMakeFiles/chip_prober.dir/chip_prober.cpp.s
+.PHONY : chip_prober.cpp.s
+
 eg_zaber.o: eg_zaber.cpp.o
 .PHONY : eg_zaber.o
 
@@ -218,30 +242,6 @@ eg_zaber.s: eg_zaber.cpp.s
 eg_zaber.cpp.s:
 	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/eg_zaber.dir/build.make src/prober/CMakeFiles/eg_zaber.dir/eg_zaber.cpp.s
 .PHONY : eg_zaber.cpp.s
-
-lowering_test.o: lowering_test.cpp.o
-.PHONY : lowering_test.o
-
-# target to build an object file
-lowering_test.cpp.o:
-	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/lowering_test.dir/build.make src/prober/CMakeFiles/lowering_test.dir/lowering_test.cpp.o
-.PHONY : lowering_test.cpp.o
-
-lowering_test.i: lowering_test.cpp.i
-.PHONY : lowering_test.i
-
-# target to preprocess a source file
-lowering_test.cpp.i:
-	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/lowering_test.dir/build.make src/prober/CMakeFiles/lowering_test.dir/lowering_test.cpp.i
-.PHONY : lowering_test.cpp.i
-
-lowering_test.s: lowering_test.cpp.s
-.PHONY : lowering_test.s
-
-# target to generate assembly for a file
-lowering_test.cpp.s:
-	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/prober/CMakeFiles/lowering_test.dir/build.make src/prober/CMakeFiles/lowering_test.dir/lowering_test.cpp.s
-.PHONY : lowering_test.cpp.s
 
 motion_controller.o: motion_controller.cpp.o
 .PHONY : motion_controller.o
@@ -298,21 +298,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... agilent_test"
+	@echo "... chip_prober"
 	@echo "... edit_cache"
 	@echo "... eg_zaber"
-	@echo "... lowering_test"
 	@echo "... motion_controller"
 	@echo "... rebuild_cache"
 	@echo "... test_opencv_camera"
 	@echo "... agilentRigolLike_example.o"
 	@echo "... agilentRigolLike_example.i"
 	@echo "... agilentRigolLike_example.s"
+	@echo "... chip_prober.o"
+	@echo "... chip_prober.i"
+	@echo "... chip_prober.s"
 	@echo "... eg_zaber.o"
 	@echo "... eg_zaber.i"
 	@echo "... eg_zaber.s"
-	@echo "... lowering_test.o"
-	@echo "... lowering_test.i"
-	@echo "... lowering_test.s"
 	@echo "... motion_controller.o"
 	@echo "... motion_controller.i"
 	@echo "... motion_controller.s"

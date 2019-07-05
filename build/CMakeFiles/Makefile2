@@ -306,16 +306,16 @@ clean: src/libWaferProb/CMakeFiles/WaferProb.dir/clean
 
 # Convenience name for "all" pass in the directory.
 src/prober/all: src/prober/CMakeFiles/agilent_test.dir/all
+src/prober/all: src/prober/CMakeFiles/chip_prober.dir/all
 src/prober/all: src/prober/CMakeFiles/eg_zaber.dir/all
-src/prober/all: src/prober/CMakeFiles/lowering_test.dir/all
 src/prober/all: src/prober/CMakeFiles/motion_controller.dir/all
 src/prober/all: src/prober/CMakeFiles/test_opencv_camera.dir/all
 .PHONY : src/prober/all
 
 # Convenience name for "clean" pass in the directory.
 src/prober/clean: src/prober/CMakeFiles/agilent_test.dir/clean
+src/prober/clean: src/prober/CMakeFiles/chip_prober.dir/clean
 src/prober/clean: src/prober/CMakeFiles/eg_zaber.dir/clean
-src/prober/clean: src/prober/CMakeFiles/lowering_test.dir/clean
 src/prober/clean: src/prober/CMakeFiles/motion_controller.dir/clean
 src/prober/clean: src/prober/CMakeFiles/test_opencv_camera.dir/clean
 .PHONY : src/prober/clean
@@ -360,13 +360,50 @@ clean: src/prober/CMakeFiles/agilent_test.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target src/prober/CMakeFiles/chip_prober.dir
+
+# All Build rule for target.
+src/prober/CMakeFiles/chip_prober.dir/all: src/libGPIB/CMakeFiles/GPIB.dir/all
+src/prober/CMakeFiles/chip_prober.dir/all: src/libZaber/CMakeFiles/Zaber.dir/all
+src/prober/CMakeFiles/chip_prober.dir/all: src/libWaferProb/CMakeFiles/WaferProb.dir/all
+	$(MAKE) -f src/prober/CMakeFiles/chip_prober.dir/build.make src/prober/CMakeFiles/chip_prober.dir/depend
+	$(MAKE) -f src/prober/CMakeFiles/chip_prober.dir/build.make src/prober/CMakeFiles/chip_prober.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/amolnar/labRemoteMyClone/build/CMakeFiles  38
+	@echo "Built target chip_prober"
+.PHONY : src/prober/CMakeFiles/chip_prober.dir/all
+
+# Include target in all.
+all: src/prober/CMakeFiles/chip_prober.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/prober/CMakeFiles/chip_prober.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amolnar/labRemoteMyClone/build/CMakeFiles 17
+	$(MAKE) -f CMakeFiles/Makefile2 src/prober/CMakeFiles/chip_prober.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amolnar/labRemoteMyClone/build/CMakeFiles 0
+.PHONY : src/prober/CMakeFiles/chip_prober.dir/rule
+
+# Convenience name for target.
+chip_prober: src/prober/CMakeFiles/chip_prober.dir/rule
+.PHONY : chip_prober
+
+# clean rule for target.
+src/prober/CMakeFiles/chip_prober.dir/clean:
+	$(MAKE) -f src/prober/CMakeFiles/chip_prober.dir/build.make src/prober/CMakeFiles/chip_prober.dir/clean
+.PHONY : src/prober/CMakeFiles/chip_prober.dir/clean
+
+# clean rule for target.
+clean: src/prober/CMakeFiles/chip_prober.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target src/prober/CMakeFiles/eg_zaber.dir
 
 # All Build rule for target.
 src/prober/CMakeFiles/eg_zaber.dir/all: src/libZaber/CMakeFiles/Zaber.dir/all
 	$(MAKE) -f src/prober/CMakeFiles/eg_zaber.dir/build.make src/prober/CMakeFiles/eg_zaber.dir/depend
 	$(MAKE) -f src/prober/CMakeFiles/eg_zaber.dir/build.make src/prober/CMakeFiles/eg_zaber.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/amolnar/labRemoteMyClone/build/CMakeFiles  38
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/amolnar/labRemoteMyClone/build/CMakeFiles  39
 	@echo "Built target eg_zaber"
 .PHONY : src/prober/CMakeFiles/eg_zaber.dir/all
 
@@ -392,43 +429,6 @@ src/prober/CMakeFiles/eg_zaber.dir/clean:
 
 # clean rule for target.
 clean: src/prober/CMakeFiles/eg_zaber.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target src/prober/CMakeFiles/lowering_test.dir
-
-# All Build rule for target.
-src/prober/CMakeFiles/lowering_test.dir/all: src/libGPIB/CMakeFiles/GPIB.dir/all
-src/prober/CMakeFiles/lowering_test.dir/all: src/libZaber/CMakeFiles/Zaber.dir/all
-src/prober/CMakeFiles/lowering_test.dir/all: src/libWaferProb/CMakeFiles/WaferProb.dir/all
-	$(MAKE) -f src/prober/CMakeFiles/lowering_test.dir/build.make src/prober/CMakeFiles/lowering_test.dir/depend
-	$(MAKE) -f src/prober/CMakeFiles/lowering_test.dir/build.make src/prober/CMakeFiles/lowering_test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/amolnar/labRemoteMyClone/build/CMakeFiles  39
-	@echo "Built target lowering_test"
-.PHONY : src/prober/CMakeFiles/lowering_test.dir/all
-
-# Include target in all.
-all: src/prober/CMakeFiles/lowering_test.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-src/prober/CMakeFiles/lowering_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amolnar/labRemoteMyClone/build/CMakeFiles 17
-	$(MAKE) -f CMakeFiles/Makefile2 src/prober/CMakeFiles/lowering_test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amolnar/labRemoteMyClone/build/CMakeFiles 0
-.PHONY : src/prober/CMakeFiles/lowering_test.dir/rule
-
-# Convenience name for target.
-lowering_test: src/prober/CMakeFiles/lowering_test.dir/rule
-.PHONY : lowering_test
-
-# clean rule for target.
-src/prober/CMakeFiles/lowering_test.dir/clean:
-	$(MAKE) -f src/prober/CMakeFiles/lowering_test.dir/build.make src/prober/CMakeFiles/lowering_test.dir/clean
-.PHONY : src/prober/CMakeFiles/lowering_test.dir/clean
-
-# clean rule for target.
-clean: src/prober/CMakeFiles/lowering_test.dir/clean
 .PHONY : clean
 
 #=============================================================================

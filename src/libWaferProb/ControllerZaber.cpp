@@ -27,7 +27,6 @@ int ControllerZaber::connect(){
         printf("%s connected\n", dn.c_str());
         status = 0;
         m_is_connected = true;
-        unpark();
     } else {
         printf("%s not connected\n", dn.c_str());
         status = 1;
@@ -77,6 +76,11 @@ string* ControllerZaber::write_with_reply(const string& cmd)
 
     poll_until_idle();
     return result;
+}
+
+int ControllerZaber::set_max_limit(float value)
+{
+	return 0;
 }
 
 int ControllerZaber::set_speed(int axis, float value)

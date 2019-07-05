@@ -16,8 +16,8 @@ if ( ${libZaber_FOUND} AND ${libWaferProb_FOUND} )
   add_executable(motion_controller motion_controller.cpp)
   target_link_libraries(motion_controller Zaber WaferProb)
 
-  add_executable(lowering_test lowering_test.cpp)
-  target_link_libraries(lowering_test Zaber WaferProb GPIB)
+  add_executable(chip_prober chip_prober.cpp)
+  target_link_libraries(chip_prober Zaber WaferProb GPIB)
    
 
   include_directories( ../libImageRec/include )

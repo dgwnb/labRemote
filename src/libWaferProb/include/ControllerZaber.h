@@ -38,7 +38,7 @@ public: // implement controller's interface
     // get current position
     int get_position();
 
-
+	int set_max_limit(float value);
     int set_home();
     int set_center();
     int scan_x_right();

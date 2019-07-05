@@ -167,6 +167,19 @@ agilent_test/fast:
 .PHONY : agilent_test/fast
 
 #=============================================================================
+# Target rules for targets named chip_prober
+
+# Build rule for target.
+chip_prober: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 chip_prober
+.PHONY : chip_prober
+
+# fast build rule for target.
+chip_prober/fast:
+	$(MAKE) -f src/prober/CMakeFiles/chip_prober.dir/build.make src/prober/CMakeFiles/chip_prober.dir/build
+.PHONY : chip_prober/fast
+
+#=============================================================================
 # Target rules for targets named eg_zaber
 
 # Build rule for target.
@@ -178,19 +191,6 @@ eg_zaber: cmake_check_build_system
 eg_zaber/fast:
 	$(MAKE) -f src/prober/CMakeFiles/eg_zaber.dir/build.make src/prober/CMakeFiles/eg_zaber.dir/build
 .PHONY : eg_zaber/fast
-
-#=============================================================================
-# Target rules for targets named lowering_test
-
-# Build rule for target.
-lowering_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lowering_test
-.PHONY : lowering_test
-
-# fast build rule for target.
-lowering_test/fast:
-	$(MAKE) -f src/prober/CMakeFiles/lowering_test.dir/build.make src/prober/CMakeFiles/lowering_test.dir/build
-.PHONY : lowering_test/fast
 
 #=============================================================================
 # Target rules for targets named motion_controller
@@ -231,8 +231,8 @@ help:
 	@echo "... Zaber"
 	@echo "... WaferProb"
 	@echo "... agilent_test"
+	@echo "... chip_prober"
 	@echo "... eg_zaber"
-	@echo "... lowering_test"
 	@echo "... motion_controller"
 	@echo "... test_opencv_camera"
 .PHONY : help

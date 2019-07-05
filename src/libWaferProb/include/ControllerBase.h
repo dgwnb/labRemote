@@ -34,6 +34,7 @@ public:
     virtual int disconnect() = 0;
 	virtual int scan_x_right()=0;
 	virtual int scan_x_left()=0;
+	virtual int set_max_limit(float value)=0;
 
     virtual int write(const string& cmd) = 0; // send command to device
 

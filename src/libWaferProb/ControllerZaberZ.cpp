@@ -33,7 +33,6 @@ int ControllerZaberZ::connect(){
 		printf("%s connected\n", dn.c_str());
 		status = 0;
 		m_is_connected = true;
-		unpark();
 	} else {
 		printf("%s not connected\n", dn.c_str());
 		status = 1;
@@ -152,8 +151,15 @@ int ControllerZaberZ::scan_x_left()
 	return 0;
 }
 
+int ControllerZaberZ::set_max_limit(float value){
+	int steps = convert_mm_to_turns(value);	
+	char cmd[256];
+	sprintf(cmd, "/1 set limit.max  %d\n", steps);
+	return write(cmd);
+}
+
 int ControllerZaberZ::park(){
-	int status = write("/tools parking park\n");
+	int status = write("/1 tools parking park\n");
 	if(status == 0){
 		printf("%s is parked\n", dn.c_str());
 	}
@@ -162,7 +168,7 @@ int ControllerZaberZ::park(){
 
 int ControllerZaberZ::unpark()
 {
-	int status = write("/tools parking unpark\n");
+	int status = write("/1 tools parking unpark\n");
 	if(status == 0){
 		printf("%s is unparked\n", dn.c_str());
 	} else {

@@ -38,6 +38,7 @@ public:
 
     int get_pos_xy();
     int get_pos_z();
+	int set_max_limit(float value);
 
     int set_home();
     int set_center();

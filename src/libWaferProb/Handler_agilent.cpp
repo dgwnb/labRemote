@@ -39,6 +39,7 @@ void Handler_agilent::print_cmd(){
             "SX --> Scan X direction to the right\n"
 			"SB --> Scan the X direction to the left\n"
 			"LC x --> Lower to chip till in contact or until z controller raised x*10 microns \n"
+			"LMX 10 --> Set the maximum limit to 10 do not touch this unless absolutely necessary!!!!!!\n"
             "----------------------------------------------------------\n"
             // "MVC X P --> move to positive x-axis direction, continuously\n" 
             // "MVC X N --> move to negative x-axis direction, continuously\n"  
@@ -110,7 +111,16 @@ void Handler_agilent::write(const string& cmd) {
 	  else if (action == "SM")
     {
         ctrl->set_center();
-    } 
+    }
+	  else if (action == "LMX")
+	{
+		if (items.size() !=2){
+			std::cout<<"did not give an arguement of where to set limit";
+			return;
+		}
+		 float value= atof(items[1].c_str());
+		 ctrl->set_max_limit(value);
+	}
     else if (action == "SP")
     {
         if (items.size() != 3){
