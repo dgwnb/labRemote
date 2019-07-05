@@ -1,5 +1,5 @@
-#ifndef __WaferProb_Handler_agilent_H_
-#define __WaferProb_Handler_agilent_H_
+#ifndef __WaferProb_Handler_chip_prober_H_
+#define __WaferProb_Handler_chip_prober_H_
 
 /*
  * A wrapper of all controls.
@@ -21,13 +21,13 @@
 #include <vector>
 
 
-class Handler_agilent: public Handler {
+class Handler_chip_prober: public Handler {
 private:
 AgilentPs ps;
 
 public:
-    Handler_agilent(std::string str,unsigned int num);
-    virtual ~Handler_agilent();
+    Handler_chip_prober(std::string str,unsigned int num);
+    virtual ~Handler_chip_prober();
     void write(const string& cmd);
 	void print_cmd();
 };

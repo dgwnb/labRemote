@@ -4,8 +4,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/WaferProb.dir/ControllerZaber.cpp.o"
   "CMakeFiles/WaferProb.dir/ControllerBase.cpp.o"
   "CMakeFiles/WaferProb.dir/MotionController.cpp.o"
-  "CMakeFiles/WaferProb.dir/Handler_agilent.cpp.o"
   "CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o"
+  "CMakeFiles/WaferProb.dir/Handler_chip_prober.cpp.o"
   "../../lib/libWaferProb.pdb"
   "../../lib/libWaferProb.so"
 )

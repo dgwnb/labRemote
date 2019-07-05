@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-#include "Handler_agilent.h"
+#include "Handler_chip_prober.h"
 //This copies the same code as motion_controller.cpp but implements a way to talk to the agilent device as well. 
 //The current below is nearly identical to// motion_controller.cpp
 //some variables we need
@@ -20,7 +20,7 @@ int main(int argc, char** argv){
 	bool possible_contact=false;
     // create a real controller
 	std::string dev_name("/dev/ttyUSB0");
-    Handler_agilent* handle = new Handler_agilent(dev_name, 7);
+    Handler_chip_prober* handle = new Handler_chip_prober(dev_name, 7);
     cout << "controller is initialized" << endl;
     handle->print_cmd();
     string input = "";

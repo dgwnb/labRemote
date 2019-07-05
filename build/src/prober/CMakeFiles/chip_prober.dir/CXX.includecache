@@ -66,7 +66,7 @@ string
 vector
 -
 
-../src/prober/../libWaferProb/include/Handler_agilent.h
+../src/prober/../libWaferProb/include/Handler_chip_prober.h
 MotionController.h
 ../src/prober/../libWaferProb/include/MotionController.h
 Handler.h
@@ -101,6 +101,6 @@ iostream
 -
 string
 -
-Handler_agilent.h
-/home/amolnar/labRemoteMyClone/src/prober/Handler_agilent.h
+Handler_chip_prober.h
+/home/amolnar/labRemoteMyClone/src/prober/Handler_chip_prober.h
 

@@ -1,4 +1,4 @@
-#include "Handler_agilent.h"
+#include "Handler_chip_prober.h"
 #include "Helper.h"
 #include "AgilentPs.h"
 
@@ -10,19 +10,19 @@
 #include <unistd.h>  // for sleep()
 #include <string>
 
-//This is a handler that runs the lowering_test executable. It is based off of the code of Handler.cpp.
+//This is a handler that runs the chip_prober executable. It is based off of the code of Handler.cpp.
 
-Handler_agilent::Handler_agilent(std::string str, unsigned int num)
+Handler_chip_prober::Handler_chip_prober(std::string str, unsigned int num)
 	: ps(str, num)
 {
 	ps.turnOn();
-	//connects the motion controllers and turns on and intiliazes agilent
+	//intiliazes agilent
 }
 
-Handler_agilent::~Handler_agilent(){
+Handler_chip_prober::~Handler_chip_prober(){
 	ps.turnOff();
 }
-void Handler_agilent::print_cmd(){
+void Handler_chip_prober::print_cmd(){
     printf("MA X 10  --> move X-axis w.r.t home position 10 millimeter\n"
             "MR X 10 --> move X-axis w.r.t current position 10 millimeter\n"
             "SP X 10  --> set speed in x-axis direction by 10 millimeter/s\n"
@@ -47,7 +47,7 @@ void Handler_agilent::print_cmd(){
 }
 
 
-void Handler_agilent::write(const string& cmd) {
+void Handler_chip_prober::write(const string& cmd) {
     if(cmd.empty()){
         return;
     }
