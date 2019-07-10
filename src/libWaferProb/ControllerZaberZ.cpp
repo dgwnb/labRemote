@@ -151,11 +151,20 @@ int ControllerZaberZ::scan_x_left()
 	return 0;
 }
 
-int ControllerZaberZ::set_max_limit(float value){
-	int steps = convert_mm_to_turns(value);	
-	char cmd[256];
-	sprintf(cmd, "/1 set limit.max  %d\n", steps);
-	return write(cmd);
+int ControllerZaberZ::set_max_limit(float value, bool natural_units){
+	if (natural_units){
+		int value_int=static_cast<int>(value);
+		//Here purposefully slicing the float value to an integer so it behaves properly with sprintf
+		char cmd[256];
+		sprintf(cmd, "/1 set limit.max  %d\n", value_int);
+		return write(cmd);
+	}
+	else {
+		int steps = convert_mm_to_turns(value);	
+		char cmd[256];
+		sprintf(cmd, "/1 set limit.max  %d\n", steps);
+		return write(cmd);
+	}
 }
 
 int ControllerZaberZ::park(){

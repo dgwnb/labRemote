@@ -33,7 +33,16 @@ src/libWaferProb/CMakeFiles/WaferProb.dir/Handler_chip_prober.cpp.o
  ../src/libWaferProb/../libGPIB/include/AgilentPs.h
  ../src/libWaferProb/../libGPIB/include/GenericPs.h
  ../src/libWaferProb/../libGPIB/include/SerialCom.h
+ ../src/libWaferProb/../libZaber/include/z_common.h
+ ../src/libWaferProb/../libZaber/include/za_serial.h
+ ../src/libWaferProb/include/ControllerBase.h
+ ../src/libWaferProb/include/ControllerZaber.h
+ ../src/libWaferProb/include/ControllerZaberZ.h
+ ../src/libWaferProb/include/Handler.h
+ ../src/libWaferProb/include/Handler_chip_prober.h
  ../src/libWaferProb/include/Helper.h
+ ../src/libWaferProb/include/MotionController.h
+ ../src/libWaferProb/include/Prober_Constants.h
  /home/amolnar/labRemoteMyClone/src/libWaferProb/Handler_chip_prober.cpp
 src/libWaferProb/CMakeFiles/WaferProb.dir/Helper.cpp.o
  ../src/libWaferProb/include/Helper.h

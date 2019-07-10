@@ -78,7 +78,7 @@ string* ControllerZaber::write_with_reply(const string& cmd)
     return result;
 }
 
-int ControllerZaber::set_max_limit(float value)
+int ControllerZaber::set_max_limit(float value, bool natural_units)
 {
 	return 0;
 }

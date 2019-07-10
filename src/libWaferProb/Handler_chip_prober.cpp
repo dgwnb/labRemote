@@ -1,6 +1,7 @@
 #include "Handler_chip_prober.h"
 #include "Helper.h"
 #include "AgilentPs.h"
+#include "Prober_Constants.h"
 
 
 #include <iostream>
@@ -9,6 +10,7 @@
 #include <stdlib.h>
 #include <unistd.h>  // for sleep()
 #include <string>
+
 
 //This is a handler that runs the chip_prober executable. It is based off of the code of Handler.cpp.
 
@@ -31,7 +33,7 @@ void Handler_chip_prober::print_cmd(){
             "SZC --> set needles contact with chip\n"
             "SZS --> set needles separate from chip\n"
             "SZD 10 --> set distance in z-axis in order to separate needle and chip.\n"
-            "TESTX --> move x from 0 to 305 with pre-defined steps\n"
+            "TEST X --> move x from 0 to 305 with pre-defined steps\n"
 			"UP --> unparks all of the zaber devices\n"
 			"PK --> parks all of the zaber devices\n"
 			"ST --> stops all of the zaber devices\n"
@@ -39,7 +41,7 @@ void Handler_chip_prober::print_cmd(){
             "SX --> Scan X direction to the right\n"
 			"SB --> Scan the X direction to the left\n"
 			"LC x --> Lower to chip till in contact or until z controller raised x*10 microns \n"
-			"LMX 10 --> Set the maximum limit to 10 do not touch this unless absolutely necessary!!!!!!\n"
+			"LMX 10 X--> Set the maximum limit to 10 if natural units desired let x=1 if mm let x=0 do not touch this unless absolutely necessary!!!!!!\n"
             "----------------------------------------------------------\n"
             // "MVC X P --> move to positive x-axis direction, continuously\n" 
             // "MVC X N --> move to negative x-axis direction, continuously\n"  
@@ -114,12 +116,13 @@ void Handler_chip_prober::write(const string& cmd) {
     }
 	  else if (action == "LMX")
 	{
-		if (items.size() !=2){
-			std::cout<<"did not give an arguement of where to set limit";
+		if (items.size() !=3){
+			std::cout<<"did not give an arguement of where to set limit\n";
 			return;
 		}
 		 float value= atof(items[1].c_str());
-		 ctrl->set_max_limit(value);
+		 bool natural_units = atof(items[2].c_str());
+		 ctrl->set_max_limit(value,natural_units);
 	}
     else if (action == "SP")
     {
@@ -148,19 +151,24 @@ void Handler_chip_prober::write(const string& cmd) {
 			return;
 		}
 		else{
+			ctrl->set_max_limit(prober_limit, 1);
+			//Here 1 above means that I want the limit to be set in natural units since constants defined in natural units
 		 	int loops= atof(items[1].c_str());
+			ps.setVoltage(test_voltage);
+			ps.setCurrent(current_limit);
 			for(int i=0;i<loops;i++){
 				std::cout<<ps.getCurrent()<<"\n";
 				double current= std::stod( ps.getCurrent());	
 				if (current>0)
 				{
-					ctrl->park();
 					break;
 				}
 				ctrl->mv_rel(2,0.01);
 				//Stod converts a string to a double	
 			}
 			ctrl->park();
+			ctrl->set_max_limit(safety_limit, 1);
+			// Again here 1 means the same thing as above
 		}
 	}else {
         printf("%s not supported yet!\n", action.c_str());

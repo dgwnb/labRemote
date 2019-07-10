@@ -100,8 +100,8 @@ int MotionController::get_position(){
     return 0;
 }
 
-int MotionController::set_max_limit(float value){
-	z_ctrl->set_max_limit(value);
+int MotionController::set_max_limit(float value, bool natural_units){
+	z_ctrl->set_max_limit(value, natural_units);
 	return 0;
 }
 

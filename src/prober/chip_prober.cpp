@@ -3,6 +3,7 @@
 #include <string>
 
 #include "Handler_chip_prober.h"
+#include "Prober_Constants.h"
 //This copies the same code as motion_controller.cpp but implements a way to talk to the agilent device as well. 
 //The current below is nearly identical to// motion_controller.cpp
 //some variables we need
@@ -24,6 +25,10 @@ int main(int argc, char** argv){
     cout << "controller is initialized" << endl;
     handle->print_cmd();
     string input = "";
+	string initl_str{"LMX "};
+	initl_str.append(std::to_string(safety_limit));
+	initl_str.append(" 1");
+	handle->write(initl_str); 
     while(true){ 
 		cout << "Please enter commands, Q for quit" << endl;
         getline(cin, input);

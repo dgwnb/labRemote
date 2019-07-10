@@ -36,7 +36,7 @@ public: // implement controller's interface
 	int stop();
 	int scan_x_right();
 	int scan_x_left();
-	int set_max_limit(float value); 
+	int set_max_limit(float value, bool natural_units); 
 
 	// get current position
 	int get_position();
