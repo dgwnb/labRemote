@@ -151,7 +151,7 @@ void Handler_chip_prober::write(const string& cmd) {
 			return;
 		}
 		else{
-			ctrl->set_max_limit(prober_limit, 1);
+			ctrl->set_max_limit(hard_limit, 1);
 			//Here 1 above means that I want the limit to be set in natural units since constants defined in natural units
 		 	int loops= atof(items[1].c_str());
 			ps.setVoltage(test_voltage);
@@ -161,13 +161,15 @@ void Handler_chip_prober::write(const string& cmd) {
 				double current= std::stod( ps.getCurrent());	
 				if (current>0)
 				{
+					ctrl->mv_rel(2 ,overdrive);
+					//Here 2 is the z axis and overdrive is the distance wanted to overdrive needles into proper contanct
 					break;
 				}
 				ctrl->mv_rel(2,0.01);
 				//Stod converts a string to a double	
 			}
 			ctrl->park();
-			ctrl->set_max_limit(safety_limit, 1);
+			ctrl->set_max_limit(operating_limit, 1);
 			// Again here 1 means the same thing as above
 		}
 	}else {

@@ -189,11 +189,11 @@ int ControllerZaberZ::unpark()
 
 int ControllerZaberZ::convert_mm_to_turns(float value){
 		// To find out where this conversion rate came from look at References
-	return value * 11111;
+	return value * 11627;
 }
 
 float ControllerZaberZ::convert_turns_to_mm(float turns){
-	return turns*0.00009 ; 
+	return turns*0.000086 ; 
 }
 
 void ControllerZaberZ::poll_until_idle(){
