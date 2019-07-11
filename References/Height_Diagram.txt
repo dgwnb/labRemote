@@ -1,0 +1,18 @@
+
+
+
+================================ Top of travel range for zaber device: 209974
+
+________________________________ Safety limit for when raising the chip: 75765 natural units 
+
+
+================================ This is where the overdriving of the probecard occurs. This is done to ensure full contanct with needles:
+
+
+-------------------------------- This is where contanct between the probecard and wafer occurs:
+
+
+================================ Safety limit for anything but raising the chip: 70000 natural units
+
+
+--------------------------------  Bottom of travel range for Zaber device: 0
