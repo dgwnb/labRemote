@@ -11,7 +11,7 @@
 
 //------ SETTINGS
 loglevel_e loglevel = logINFO;
-std::string port("/dev/ttyUSB0");
+std::string port("/dev/ttyUSB1");
 int gpib = 7;
 int channel = 1;
 //---------------

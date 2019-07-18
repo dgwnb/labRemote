@@ -115,6 +115,11 @@ int MotionController::scan_x_left(){
 	return 0;
 }
 
+int MotionController::move_to_max(){
+	z_ctrl->move_to_max();
+	return 0;
+}
+
 int MotionController::get_pos_xy(){
     xy_ctrl->get_position();
     m_position[0] = xy_ctrl->m_position[0];
@@ -130,6 +135,11 @@ int MotionController::get_pos_z(){
     return 0;
 }
 
+int MotionController::check_position(float distance_needle_to_wafer)
+{
+	z_ctrl->check_position(distance_needle_to_wafer);
+	return 0;
+}
 
 int MotionController::get_position(int axis){
     get_position();

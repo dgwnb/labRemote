@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/chip_prober.dir/chip_prober.cpp.o  -o ../../bin/chip_prober -rdynamic ../../lib/libZaber.so ../../lib/libWaferProb.so ../../lib/libGPIB.so ../../lib/libZaber.so -Wl,-rpath,/home/amolnar/labRemoteMyClone/build/lib 

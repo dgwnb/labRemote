@@ -17,7 +17,8 @@ class ControllerZaberZ : public ControllerBase
 private:
 	z_port port; //port connected to Zaber
 	string dn; // device name
-
+private:
+	int natural_units_z_position;
 public: // implement controller's interface
 	ControllerZaberZ(const char* device_name);
 	~ControllerZaberZ();
@@ -37,7 +38,8 @@ public: // implement controller's interface
 	int scan_x_right();
 	int scan_x_left();
 	int set_max_limit(float value, bool natural_units); 
-
+	int move_to_max();
+	int check_position(float height_between_needle_and_wafer);
 	// get current position
 	int get_position();
 

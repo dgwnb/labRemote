@@ -1,18 +1,10 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
 #IncludeRegexComplain: ^$
 
 #IncludeRegexTransform: 
-
-../src/libZaber/include/z_common.h
-windows.h
--
-
-../src/libZaber/include/za_serial.h
-z_common.h
-../src/libZaber/include/z_common.h
 
 /home/amolnar/labRemoteMyClone/src/libZaber/za_serial.cpp
 string.h

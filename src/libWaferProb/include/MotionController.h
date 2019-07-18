@@ -28,6 +28,9 @@ public:
     int mv_abs(int axis, float value); // move w.r.t home-position
     int mv_rel(int axis, float value); // move w.r.t current-position
     int stop();
+	
+	int move_to_max();
+	int check_position(float distance_needle_to_wafer);
 
     int get_position(int axis);
     int get_position();

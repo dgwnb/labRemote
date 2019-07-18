@@ -3,9 +3,11 @@
 #include <string.h>
 #include <vector>
 #include <stdlib.h>
+#include <iostream>
 
 #include "ControllerZaberZ.h"
 #include "Helper.h"
+#include "Prober_Constants.h"
 
 using namespace std;
 
@@ -127,6 +129,7 @@ int ControllerZaberZ::get_position()
 	if(strncmp(decoded_reply.response_data, "BADDATA", 7) == 0){
 		m_position[2] = DEFAULT_Z_POS;
 	} else {
+		natural_units_z_position=(atof(data.c_str()));
 		m_position[2] = (int)(convert_turns_to_mm(atof(data.c_str()))*1000) / 1000.;
 	}
 	return 0;
@@ -153,12 +156,15 @@ int ControllerZaberZ::scan_x_left()
 
 int ControllerZaberZ::set_max_limit(float value, bool natural_units){
 	if (natural_units){
-		int value_int=static_cast<int>(value);
-		//Here purposefully slicing the float value to an integer so it behaves properly with sprintf
+		//Depending on whether we want natural_units or mm determines which of the functions we use
+		//Below is natural_units
 		char cmd[256];
-		sprintf(cmd, "/1 set limit.max  %d\n", value_int);
+	    int	int_value= static_cast<int>(value);
+		//purposefully slicing to an integer to keep everything behaving properly
+		sprintf(cmd, "/1 set limit.max  %d\n", int_value);
 		return write(cmd);
 	}
+	//Below is in mm as can be seen we first convert then send
 	else {
 		int steps = convert_mm_to_turns(value);	
 		char cmd[256];
@@ -192,10 +198,33 @@ int ControllerZaberZ::convert_mm_to_turns(float value){
 	return value * 11627;
 }
 
+int ControllerZaberZ::check_position(float height_between_needle_and_wafer){
+	get_position();
+	//converting height between needle and wafer to natural units
+	int n_to_w_nat={convert_mm_to_turns(height_between_needle_and_wafer)};
+	int value{natural_units_z_position + n_to_w_nat};
+	std::cout<<value<<'\n';
+	if ((value<=percent_above_contact) && (value>=percent_below_contact))
+	{
+		std::cout<<"Check position is good! You are ready to use LC to raise wafer to needles safety in place\n";
+	}
+	else
+	{
+		std::cout<<"SOMETHING IS WRONG DO NOT RAISE WAFER CHECK TO SEE IF EXPECTED WAFER THICKNESS IS CORRECT IN Prober_Constants fix this before raising wafer\n";
+	}
+	return 0;
+}
+
 float ControllerZaberZ::convert_turns_to_mm(float turns){
 	return turns*0.000086 ; 
 }
 
+int ControllerZaberZ::move_to_max(){
+	char cmd[256];
+	sprintf(cmd, "/1 move abs %d\n", operating_limit);
+	return write(cmd);
+
+}
 void ControllerZaberZ::poll_until_idle(){
 	char reply[256] = { 0 };
 	char pos_reply[256] = { 0 };

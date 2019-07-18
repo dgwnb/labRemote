@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/lowering_test.dir/lowering_test.cpp.o  -o ../../bin/lowering_test -rdynamic ../../lib/libZaber.so ../../lib/libWaferProb.so ../../lib/libGPIB.so ../../lib/libZaber.so -Wl,-rpath,/home/amolnar/labRemoteMyClone/build/lib 

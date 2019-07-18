@@ -1,10 +1,10 @@
-FILE(REMOVE_RECURSE
-  "CMakeFiles/Zaber.dir/za_serial.cpp.o"
+file(REMOVE_RECURSE
   "../../lib/libZaber.pdb"
   "../../lib/libZaber.so"
+  "CMakeFiles/Zaber.dir/za_serial.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/Zaber.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/Zaber.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

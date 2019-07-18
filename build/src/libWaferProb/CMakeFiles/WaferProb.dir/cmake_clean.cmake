@@ -1,16 +1,18 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
+  "../../lib/libWaferProb.pdb"
+  "../../lib/libWaferProb.so"
   "CMakeFiles/WaferProb.dir/ControllerBase.cpp.o"
   "CMakeFiles/WaferProb.dir/ControllerZaber.cpp.o"
   "CMakeFiles/WaferProb.dir/ControllerZaberZ.cpp.o"
   "CMakeFiles/WaferProb.dir/Handler.cpp.o"
-  "CMakeFiles/WaferProb.dir/Handler_chip_prober.cpp.o"
+  "CMakeFiles/WaferProb.dir/HandlerChipProberMovement.cpp.o"
+  "CMakeFiles/WaferProb.dir/HandlerChipProberTesting.cpp.o"
   "CMakeFiles/WaferProb.dir/Helper.cpp.o"
   "CMakeFiles/WaferProb.dir/MotionController.cpp.o"
-  "../../lib/libWaferProb.pdb"
-  "../../lib/libWaferProb.so"
+  "CMakeFiles/WaferProb.dir/USBRelay.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/WaferProb.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/WaferProb.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

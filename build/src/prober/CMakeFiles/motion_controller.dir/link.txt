@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/motion_controller.dir/motion_controller.cpp.o  -o ../../bin/motion_controller -rdynamic ../../lib/libZaber.so ../../lib/libWaferProb.so ../../lib/libZaber.so ../../lib/libGPIB.so -Wl,-rpath,/home/amolnar/labRemoteMyClone/build/lib 
+/usr/bin/c++    -rdynamic CMakeFiles/motion_controller.dir/motion_controller.cpp.o  -o ../../bin/motion_controller -Wl,-rpath,/home/amolnar/labRemoteMyClone/build/lib ../../lib/libWaferProb.so ../../lib/libZaber.so ../../lib/libGPIB.so 

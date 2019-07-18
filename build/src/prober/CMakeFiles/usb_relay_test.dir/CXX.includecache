@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/amolnar/labRemoteMyClone/src/prober/usb_relay_test.cpp
+iostream
+-
+cstdlib
+-
+USBRelay.h
+/home/amolnar/labRemoteMyClone/src/prober/USBRelay.h
+
