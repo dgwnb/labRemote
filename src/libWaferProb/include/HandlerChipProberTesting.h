@@ -8,6 +8,7 @@
 #include "AgilentPs.h"
 #include "USBRelay.h"
 #include "Keithley2000.h"
+#include "Keithley24XX.h"
 
 #include <string>
 #include <vector>
@@ -18,10 +19,11 @@ private:
 AgilentPs ps;
 USBRelay usb_relay;
 Keithley2000 keithley_2000;
+Keithley24XX keithley_2401;
 
 
 public:
-    HandlerChipProberTesting(std::string str,unsigned int psGPIB, unsigned int ke2000GPIB);
+    HandlerChipProberTesting(std::string str,unsigned int psGPIB, unsigned int ke2000GPIB, unsigned int ke2401GPIB);
     virtual ~HandlerChipProberTesting();
     void write(const std::string& cmd);
 	void print_cmd();

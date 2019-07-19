@@ -20,6 +20,7 @@ HandlerChipProberMovement::HandlerChipProberMovement(std::string str, unsigned i
 	ps.setCh(1);
 	ps.setVoltage(0);
 	ps.setCurrent(0);
+	ps.turnOn();
 	ps.setCh(2);
 	ps.setVoltage(0);
 	ps.setCurrent(0);
@@ -28,6 +29,9 @@ HandlerChipProberMovement::HandlerChipProberMovement(std::string str, unsigned i
 }
 
 HandlerChipProberMovement::~HandlerChipProberMovement(){
+	ps.setCh(1);
+	ps.turnOff();
+	ps.setCh(2);
 	ps.turnOff();
 }
 void HandlerChipProberMovement::print_cmd(){
@@ -48,7 +52,8 @@ void HandlerChipProberMovement::print_cmd(){
 			"LMX 10 X--> Set the maximum limit to 10 if natural units desired let x=1 if mm let x=0 do not touch this unless absolutely necessary!!!!!!\n"
 			"CP x-->check position where distance from needles to wafer is x\n"
 			"SPC --> Seperate needles from chip will automaticaly do this as the next command after feeling contact\n"
-			"GC --> Get the current that the agilent device\n"
+			"GC --> Get the current that the agilent device sees\n"
+			"SC --> Scrub the chip only do this when in contact!Will scrub pads to allow for better contact\n"
             "----------------------------------------------------------\n"
             // "MVC X P --> move to positive x-axis direction, continuously\n" 
             // "MVC X N --> move to negative x-axis direction, continuously\n"  
@@ -119,9 +124,9 @@ bool HandlerChipProberMovement::write(const string& cmd) {
 	  else if (action =="GC")
 	{
 		ps.setCh(1);
-		std::cout<<"Channel 1 Current is: "<<ps.getCurrent()<<'\n';
+		std::cout<<"Analog Current is: "<<ps.getCurrent()<<'\n';
 		ps.setCh(2);
-		std::cout<<"Channel 2 Current is "<<ps.getCurrent()<<'\n';
+		std::cout<<"Digital Current is: "<<ps.getCurrent()<<'\n';
 		return 0;
 	}
 	  else if (action == "SPC")
@@ -163,6 +168,17 @@ bool HandlerChipProberMovement::write(const string& cmd) {
         ctrl->set_center();
 		return 0;
     }
+	  else if (action == "SC")
+	{
+		ctrl->set_max_limit(hard_limit,1);
+		ctrl->unpark();
+		ctrl->mv_rel(2, -0.2);
+		ctrl->mv_rel(2, 0.2);
+		ctrl->set_max_limit(operating_limit, 1);
+		ctrl->park();
+		return 1;
+	}
+
 	  else if (action == "LMX")
 	{
 		if (items.size() !=3){
@@ -209,11 +225,19 @@ bool HandlerChipProberMovement::write(const string& cmd) {
 			ps.setCh(1);
 			ps.setVoltage(test_voltage);
 			ps.setCurrent(current_limit);
+			ps.turnOn();
+			ps.setCh(2);
+			ps.setVoltage(test_voltage);
+			ps.setCurrent(current_limit);
+			ps.turnOn();
 			for(int i=0;i<loops;i++){
 				ps.setCh(1);
 				double current_channel_1= std::stod(ps.getCurrent());
-				std::cout<<"Channel 1 Current is: "<<current_channel_1<<'\n';
-				if (current_channel_1>0)
+				ps.setCh(2);
+				double current_channel_2= std::stod(ps.getCurrent());
+				std::cout<<"Analog Current is: "<<current_channel_1<<'\n';
+				std::cout<<"Digital Current is: "<<current_channel_2<<'\n';
+				if (current_channel_1>0 || current_channel_2>0)
 				{
 					std::cout<<"You are in contact next command will lower stage no matter what you type\n";
 					std::cout<<"Just press enter to lower stage then can put in new commands\n";

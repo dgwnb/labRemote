@@ -121,6 +121,18 @@ std::string Keithley24XX::sense(enum KeithleyMode mode)
   return this->receive(":READ?").substr(0, 13);
 }
 
+void Keithley24XX::setCompl(enum KeithleyMode mode, double protection) {
+	switch (mode) {
+		case KeithleyMode::VOLTAGE:
+			this->send(":SENSE:VOLT:PROTECTION " + std::to_string(protection));
+			break;
+
+		case KeithleyMode::CURRENT:
+			this->send(":SENSE:CURRENT:PROTECTION " + std::to_string(protection));
+			break;
+	}
+}
+
 bool Keithley24XX::isOn()
 {
   return std::stoi(this->receive("OUTPUT:STAT?"))==1;

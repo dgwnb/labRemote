@@ -9,7 +9,8 @@ using namespace std;
 int main(int argc, char** argv){
     // create a real controller
 	std::string dev_name("/dev/ttyUSB1");
-	HandlerChipProberTesting* handle = new HandlerChipProberTesting(dev_name, 7, 1);
+	//here the numbers correspond to GPIB adresses. 7 is to the Agilent 1 is to the keithley 2000 and 3 is to the kiethley 2401
+	HandlerChipProberTesting* handle = new HandlerChipProberTesting(dev_name, 7, 1, 3);
     cout << "controller is initialized" << endl;
     handle->print_cmd();
     string input = "";

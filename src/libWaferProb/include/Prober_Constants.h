@@ -6,7 +6,8 @@
 //
 //Note all distances in natural_units of zaber device not in mm
 //Distance constants in natural_units
-const int wafer_thickness{0};
+//Rd53a is 150 microns thick converting to natural units is 
+const int wafer_thickness{1744};
 const int operating_limit{62000-wafer_thickness};
 //2325 is 200 microns in natural units used for hard limit
 const int hard_limit{75765+2325-wafer_thickness};
@@ -18,16 +19,18 @@ const int percent_below_contact{static_cast<int>(nominal_contact_height-0.02*nom
 
 
 
-const float overdrive{0.050};
+const float overdrive{0.075};
 
-//Agilent constants in obvious units
-//amps
+//Agilent constants in  volts or amps respectively
 const float current_limit{0.7}; 
-//volts
 const float test_voltage{0.5};
-//volts
-const float over_voltage{2};
 
+
+//Keithley 2401 Constants
+//In units if volts or amps respectively
+const double reference_current{0.000004};
+const double reference_current_range{0.000005};
+const float voltage_compliance{1};
 
 #endif
 

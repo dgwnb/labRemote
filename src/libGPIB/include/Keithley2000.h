@@ -12,13 +12,8 @@
 #include <string>
 #include <thread>
 #include <chrono>
-
 #include "SerialCom.h"
-
-enum class KeithleyMode {
-    VOLTAGE,
-    CURRENT
-};
+#include "KeithleyMode.h"
 
 class Keithley2000 {
     public:

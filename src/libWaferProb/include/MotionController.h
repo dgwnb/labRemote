@@ -31,7 +31,6 @@ public:
 	
 	int move_to_max();
 	int check_position(float distance_needle_to_wafer);
-
     int get_position(int axis);
     int get_position();
 	int scan_x_right();

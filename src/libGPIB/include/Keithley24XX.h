@@ -16,11 +16,7 @@
 #include <sstream>
 
 #include "SerialCom.h"
-
-enum class KeithleyMode {
-    VOLTAGE,
-    CURRENT
-};
+#include "KeithleyMode.h"
 
 class Keithley24XX {
     public:
@@ -32,10 +28,9 @@ class Keithley24XX {
         void turnOff();
         void setSource(enum KeithleyMode, double range, double value);
         void setSense(enum KeithleyMode, double range, double protection);
-
-	bool isOn();
-
+		bool isOn();
         std::string sense(enum KeithleyMode);
+		void setCompl(enum KeithleyMode, double protectio);
 
 
     private:
