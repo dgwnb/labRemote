@@ -17,7 +17,7 @@
 using namespace std;
 int main(int argc, char** argv){
     // create a real controller
-	std::string dev_name("/dev/ttyUSB1");
+	std::string dev_name("/dev/ttyUSB0");
     HandlerChipProberMovement* handle = new HandlerChipProberMovement(dev_name, 7);
     cout << "controller is initialized" << endl;
 	bool in_contact{0};
@@ -32,10 +32,10 @@ int main(int argc, char** argv){
 		if (in_contact){
 			getline(cin, input);
 			if ((input[0] == 'S'|| input[0] =='s') &&(input[1] =='c' || input[1] == 'C')) {}
-			//Here if input is SBC this means it is scrub chip only want this to happen when in contact so we don't have to do anything
+			//Here if input is SC this means it is scrub chip only want this to happen when in contact so we don't have to do anything
 			else
 			{
-				//If we are in contact and get any command other than SBC we lower stage to operating limit
+				//If we are in contact and get any command other than SPC we lower stage to operating limit
 				input="SPC";
 			}
 		}
@@ -52,4 +52,4 @@ int main(int argc, char** argv){
     delete handle;
 
     cout << "good bye" << endl;
-}
+

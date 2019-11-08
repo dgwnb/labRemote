@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/WaferProb.dir/Helper.cpp.o"
   "CMakeFiles/WaferProb.dir/MotionController.cpp.o"
   "CMakeFiles/WaferProb.dir/USBRelay.cpp.o"
+  "CMakeFiles/WaferProb.dir/YarrTesting.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

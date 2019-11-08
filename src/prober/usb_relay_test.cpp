@@ -1,13 +1,12 @@
 #include<iostream>
 #include<cstdlib>
 
-#include"USBRelay.h"
+#include"YarrTesting.h"
 
 int main()
 {
-	
-	USBRelay usb;
-	usb.relay_VDD();
+	YarrTesting yarr;	
+	yarr.digital_scan();
 	return 0;
 
 

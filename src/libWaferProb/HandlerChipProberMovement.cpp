@@ -18,13 +18,11 @@ HandlerChipProberMovement::HandlerChipProberMovement(std::string str, unsigned i
 	: ps(str, num)
 {
 	ps.setCh(1);
+	ps.setCurrent(current_limit);
 	ps.setVoltage(0);
-	ps.setCurrent(0);
-	ps.turnOn();
 	ps.setCh(2);
+	ps.setCurrent(current_limit);
 	ps.setVoltage(0);
-	ps.setCurrent(0);
-	ps.turnOn();
 	//intiliazes agilent
 }
 
@@ -32,8 +30,13 @@ HandlerChipProberMovement::~HandlerChipProberMovement(){
 	ps.setCh(1);
 	ps.turnOff();
 	ps.setCh(2);
-	ps.turnOff();
 }
+
+double HandlerChipProberMovement::get_current(int channel){
+	ps.setCh(int);
+	return stod(ps.getCurrent);
+}
+
 void HandlerChipProberMovement::print_cmd(){
     printf("MA X 10  --> move X-axis w.r.t home position 10 millimeter\n"
             "MR X 10 --> move X-axis w.r.t current position 10 millimeter\n"
@@ -54,6 +57,9 @@ void HandlerChipProberMovement::print_cmd(){
 			"SPC --> Seperate needles from chip will automaticaly do this as the next command after feeling contact\n"
 			"GC --> Get the current that the agilent device sees\n"
 			"SC --> Scrub the chip only do this when in contact!Will scrub pads to allow for better contact\n"
+			"GTC i j -->Go to the chip that is in the x position of i and the y position of j\n"
+			"CBC i j --> Calibrate chip 1-6 aka chip 1 which is at x position of i and y position of j do this before running GTC\n"
+			"LW --> Put chuck into load wafer position this will allow easier loading of wafer without having to guess where to move\n"
             "----------------------------------------------------------\n"
             // "MVC X P --> move to positive x-axis direction, continuously\n" 
             // "MVC X N --> move to negative x-axis direction, continuously\n"  
@@ -101,6 +107,30 @@ bool HandlerChipProberMovement::write(const string& cmd) {
         ctrl->set_home();
 		return 0;
     }
+	  else if (action == "GTC")
+	{
+		if(items.size()!=3){
+			std::cout<<"Argument of GTC is wrong did not provide both an x and y coordinate\n";
+			return 0;
+			}
+		float chip_col= atof(items[1].c_str());
+		float chip_row= atof(items[2].c_str());
+		float chip_x_pos=(((calib_chip_col-chip_col)*incre_x)+chip_1_x_pos);
+		float chip_y_pos=(((calib_chip_row-chip_row)*incre_y)+chip_1_y_pos);
+		ctrl->mv_abs(0, chip_x_pos);
+		ctrl->mv_abs(1, chip_y_pos);
+		return 0;
+	}
+	  else if (action == "CBC")
+	{
+	  	if(items.size()!=3){
+			std::cout<<"Arguement of CBC is wrong expects an x and a y value\n";
+			return 0;
+			}
+		chip_1_x_pos=(atof(items[1].c_str()));
+		chip_1_y_pos=(atof(items[1].c_str()));
+		return 0;
+	}
 	  else if (action == "ST")
 	{
 		ctrl->stop();
@@ -116,6 +146,12 @@ bool HandlerChipProberMovement::write(const string& cmd) {
 		ctrl->park();
 		return 0;
     }
+	  else if (action == "LW")
+	{
+		ctrl->mv_abs(0, 152.50);
+	  	ctrl->mv_abs(1, 273.50);
+		return 0;
+	}
 	  else if (action == "MM")
 	{	  
 		ctrl->move_to_max();
@@ -124,9 +160,9 @@ bool HandlerChipProberMovement::write(const string& cmd) {
 	  else if (action =="GC")
 	{
 		ps.setCh(1);
-		std::cout<<"Analog Current is: "<<ps.getCurrent()<<'\n';
+		std::cout<<"Chip current is: "<<ps.getCurrent()<<'\n';
 		ps.setCh(2);
-		std::cout<<"Digital Current is: "<<ps.getCurrent()<<'\n';
+		std::cout<<"Aux current  is: "<<ps.getCurrent()<<'\n';
 		return 0;
 	}
 	  else if (action == "SPC")
@@ -170,12 +206,18 @@ bool HandlerChipProberMovement::write(const string& cmd) {
     }
 	  else if (action == "SC")
 	{
+		ps.turnOff();
 		ctrl->set_max_limit(hard_limit,1);
+		ctrl->set_speed(1, 0.2);
+		ctrl->set_speed(2, 0.2);
 		ctrl->unpark();
+		ctrl->mv_rel(1, -0.01);
 		ctrl->mv_rel(2, -0.2);
+		ctrl->mv_rel(1, 0.01);
 		ctrl->mv_rel(2, 0.2);
 		ctrl->set_max_limit(operating_limit, 1);
 		ctrl->park();
+		ps.turnOn();
 		return 1;
 	}
 
@@ -225,19 +267,21 @@ bool HandlerChipProberMovement::write(const string& cmd) {
 			ps.setCh(1);
 			ps.setVoltage(test_voltage);
 			ps.setCurrent(current_limit);
-			ps.turnOn();
 			ps.setCh(2);
 			ps.setVoltage(test_voltage);
 			ps.setCurrent(current_limit);
-			ps.turnOn();
 			for(int i=0;i<loops;i++){
 				ps.setCh(1);
+				ps.turnOn();
 				double current_channel_1= std::stod(ps.getCurrent());
+				ps.turnOff();
 				ps.setCh(2);
+				ps.turnOn();
 				double current_channel_2= std::stod(ps.getCurrent());
+				ps.turnOff();
 				std::cout<<"Analog Current is: "<<current_channel_1<<'\n';
 				std::cout<<"Digital Current is: "<<current_channel_2<<'\n';
-				if (current_channel_1>0 || current_channel_2>0)
+				if (current_channel_1>0.01 || current_channel_2>0.1)
 				{
 					std::cout<<"You are in contact next command will lower stage no matter what you type\n";
 					std::cout<<"Just press enter to lower stage then can put in new commands\n";

@@ -19,3 +19,5 @@ src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o
  /home/amolnar/labRemoteMyClone/src/libWaferProb/MotionController.cpp
 src/libWaferProb/CMakeFiles/WaferProb.dir/USBRelay.cpp.o
  /home/amolnar/labRemoteMyClone/src/libWaferProb/USBRelay.cpp
+src/libWaferProb/CMakeFiles/WaferProb.dir/YarrTesting.cpp.o
+ /home/amolnar/labRemoteMyClone/src/libWaferProb/YarrTesting.cpp

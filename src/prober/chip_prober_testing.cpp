@@ -14,7 +14,6 @@ int main(int argc, char** argv){
     cout << "controller is initialized" << endl;
     handle->print_cmd();
     string input = "";
-	//above initiliazes a operating limit z height for zaber controller. Does this before it gives user control 
     while(true){
 		cout << "Please enter commands, Q for quit" << endl;
         getline(cin, input);

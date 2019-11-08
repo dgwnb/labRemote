@@ -24,17 +24,23 @@ HandlerChipProberTesting::HandlerChipProberTesting(std::string str, unsigned int
 	keithley_2401.setSource(KeithleyMode::CURRENT, reference_current_range, reference_current);
 	keithley_2401.setCompl(KeithleyMode::VOLTAGE, voltage_compliance);
 	keithley_2401.turnOn();
-	ps.setCh(1);
-	ps.turnOn();
-	ps.setCh(2);
-	ps.turnOn();
+	keithley_2000.init();
+	usb_relay.relay_VIN();
 }
 
 HandlerChipProberTesting::~HandlerChipProberTesting(){
 	keithley_2401.turnOff();
+	usb_relay.relay_VIN();
+	ps.setCh(1);
+	ps.turnOff();
+	ps.setCh(2);
+	ps.turnOff();
 }
 void HandlerChipProberTesting::print_cmd(){
     printf("GC --> Get the current that the agilent device\n"
+			"VIN --> Switch to VIN mode with both voltage and USB relay\n"
+			"VDD --> Switch to VDD mode with both voltage and USB relay\n"
+			"YARR d or a --> Run digital yarr scan if d present or analog if a present\n"
             "----------------------------------------------------------\n"
             // "MVC X P --> move to positive x-axis direction, continuously\n" 
             // "MVC X N --> move to negative x-axis direction, continuously\n"  
@@ -63,6 +69,68 @@ void HandlerChipProberTesting::write(const string& cmd) {
 		ps.setCh(2);
 		std::cout<<"Digital Current is: "<<ps.getCurrent()<<'\n';
 		return;
+	}
+	else if (action =="VIN")
+	{
+		ps.setCh(1);
+		ps.turnOff();
+		ps.setVoltage(VIN);
+		ps.setCh(2);
+		ps.turnOff();
+		ps.setVoltage(VIN);
+		usb_relay.relay_VIN();
+		ps.setCh(1);
+		ps.turnOn();
+		ps.setCh(2);
+		ps.turnOn();
+
+	}
+	else if (action =="VDD")
+	{
+		ps.setCh(1);
+		ps.turnOff();
+		ps.setVoltage(VDD);
+		ps.setCh(2);
+		ps.turnOff();
+		ps.setVoltage(VDD);
+		usb_relay.relay_VDD();
+		ps.setCh(1);
+		ps.turnOn();
+		ps.setCh(2);
+		ps.turnOn();
+	}
+	else if (action =="TEST")
+	{
+		std::cout<<"channel 1: "<<std::stod((keithley_2000.readChannel("1")))<<'\n';	
+		std::cout<<"channel 2: "<<std::stod((keithley_2000.readChannel("2")))<<'\n';	
+		std::cout<<"channel 3: "<<std::stod((keithley_2000.readChannel("3")))<<'\n';	
+	}
+	else if (action=="POWERCYC"){
+		ps.setCh(1);
+		ps.turnOff();
+		ps.setCh(2);
+		ps.turnOff();
+		ps.setCh(1);
+		ps.turnOn();
+		ps.setCh(2);
+		ps.turnOn();
+	}
+	else if (action=="YARR")
+	{
+		if (items.size()!=2){
+			std::cout<<"Did not define what kind of yarr scan\n";
+		}
+		else
+		{
+		 if (items[1]=="D")
+			{
+				yarr.digital_scan();
+			}
+		 else if (items[1]=="A")
+			{
+				yarr.analog_scan();
+			}
+		}
 	}
 	else {
         printf("%s not supported yet!\n", action.c_str());

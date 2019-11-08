@@ -9,6 +9,7 @@
 #include "USBRelay.h"
 #include "Keithley2000.h"
 #include "Keithley24XX.h"
+#include "YarrTesting.h"
 
 #include <string>
 #include <vector>
@@ -20,7 +21,7 @@ AgilentPs ps;
 USBRelay usb_relay;
 Keithley2000 keithley_2000;
 Keithley24XX keithley_2401;
-
+YarrTesting yarr;
 
 public:
     HandlerChipProberTesting(std::string str,unsigned int psGPIB, unsigned int ke2000GPIB, unsigned int ke2401GPIB);

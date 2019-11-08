@@ -368,6 +368,33 @@ USBRelay.cpp.s:
 	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/libWaferProb/CMakeFiles/WaferProb.dir/build.make src/libWaferProb/CMakeFiles/WaferProb.dir/USBRelay.cpp.s
 .PHONY : USBRelay.cpp.s
 
+YarrTesting.o: YarrTesting.cpp.o
+
+.PHONY : YarrTesting.o
+
+# target to build an object file
+YarrTesting.cpp.o:
+	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/libWaferProb/CMakeFiles/WaferProb.dir/build.make src/libWaferProb/CMakeFiles/WaferProb.dir/YarrTesting.cpp.o
+.PHONY : YarrTesting.cpp.o
+
+YarrTesting.i: YarrTesting.cpp.i
+
+.PHONY : YarrTesting.i
+
+# target to preprocess a source file
+YarrTesting.cpp.i:
+	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/libWaferProb/CMakeFiles/WaferProb.dir/build.make src/libWaferProb/CMakeFiles/WaferProb.dir/YarrTesting.cpp.i
+.PHONY : YarrTesting.cpp.i
+
+YarrTesting.s: YarrTesting.cpp.s
+
+.PHONY : YarrTesting.s
+
+# target to generate assembly for a file
+YarrTesting.cpp.s:
+	cd /home/amolnar/labRemoteMyClone/build && $(MAKE) -f src/libWaferProb/CMakeFiles/WaferProb.dir/build.make src/libWaferProb/CMakeFiles/WaferProb.dir/YarrTesting.cpp.s
+.PHONY : YarrTesting.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -404,6 +431,9 @@ help:
 	@echo "... USBRelay.o"
 	@echo "... USBRelay.i"
 	@echo "... USBRelay.s"
+	@echo "... YarrTesting.o"
+	@echo "... YarrTesting.i"
+	@echo "... YarrTesting.s"
 .PHONY : help
 
 

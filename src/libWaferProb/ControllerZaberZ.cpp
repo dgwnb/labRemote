@@ -204,7 +204,7 @@ int ControllerZaberZ::check_position(float height_between_needle_and_wafer){
 	int n_to_w_nat={convert_mm_to_turns(height_between_needle_and_wafer)};
 	int value{natural_units_z_position + n_to_w_nat};
 	std::cout<<value<<'\n';
-	if ((value<=percent_above_contact) && (value>=percent_below_contact))
+	if ((value<=slop_above_contact) && (value>=slop_below_contact))
 	{
 		std::cout<<"Check position is good! You are ready to use LC to raise wafer to needles safety in place\n";
 	}

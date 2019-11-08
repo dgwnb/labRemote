@@ -54,7 +54,7 @@ void Keithley2000::setSense(enum KeithleyMode mode) {
 }
 
 std::string Keithley2000::sense() {
-    return this->receive(":READ?").substr(0, 13);
+    return this->receive(":READ?").substr(0, 15);
 }
 
 //SCAN scanner board -- Switching Matrix Functions
@@ -63,7 +63,7 @@ std::string Keithley2000::readChannel(std::string channel){
     this->send(":ROUTE:OPEN:ALL");
     this->send(":SENSE:FUNC \"VOLT\"");
     this->send(":ROUTE:CLOSE (@" + channel + ")");
-    return this->receive(":READ?").substr(0,13);
+    return this->receive(":READ?").substr(0,15);
 }
 
 

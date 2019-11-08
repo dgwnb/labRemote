@@ -24,12 +24,15 @@
 class HandlerChipProberMovement: public Handler {
 private:
 AgilentPs ps;
+float chip_1_x_pos{0};
+float chip_1_y_pos{0};
 
 public:
     HandlerChipProberMovement(std::string str,unsigned int num);
     virtual ~HandlerChipProberMovement();
     bool write(const string& cmd);
 	void print_cmd();
+	double get_current();
 };
 
 #endif

@@ -19,3 +19,5 @@ src/libWaferProb/CMakeFiles/WaferProb.dir/MotionController.cpp.o: ../src/libWafe
 
 src/libWaferProb/CMakeFiles/WaferProb.dir/USBRelay.cpp.o: ../src/libWaferProb/USBRelay.cpp
 
+src/libWaferProb/CMakeFiles/WaferProb.dir/YarrTesting.cpp.o: ../src/libWaferProb/YarrTesting.cpp
+
