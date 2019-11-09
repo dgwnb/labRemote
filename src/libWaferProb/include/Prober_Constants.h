@@ -21,8 +21,11 @@ const int slop_below_contact{static_cast<int>(nominal_contact_height-2325)};
 
 const float overdrive{0.100};
 
-//Chip General Constants
+//Chip LDO testing constants
 const float current_contact_cutoff{0.4};
+
+//Chip Shunt testing constants
+const float shunt_voltage_max{2};
 
 //Agilent constants in  volts or amps respectively
 const float current_limit{0.7}; 
@@ -44,6 +47,13 @@ const float incre_y{23.6};
 const int calib_chip_col{1};
 const int calib_chip_row{6};
 
+//Enumeration for wafer_probe_script error steps
+enum error
+{
+	NONE,
+	LDO_MODE_ERROR,
+	SHUNT_MODE_ERROR,
+};
 #endif
 
 

@@ -70,7 +70,7 @@ void HandlerChipProberTesting::write(const string& cmd) {
 		std::cout<<"Digital Current is: "<<ps.getCurrent()<<'\n';
 		return;
 	}
-	else if (action =="VIN")
+	else if (action =="LDO")
 	{
 		ps.setCh(1);
 		ps.turnOff();
@@ -83,9 +83,9 @@ void HandlerChipProberTesting::write(const string& cmd) {
 		ps.turnOn();
 		ps.setCh(2);
 		ps.turnOn();
-
+	//Will need to change this member function to LDO and SHUNT
 	}
-	else if (action =="VDD")
+	else if (action =="SHUNT")
 	{
 		ps.setCh(1);
 		ps.turnOff();
@@ -98,6 +98,7 @@ void HandlerChipProberTesting::write(const string& cmd) {
 		ps.turnOn();
 		ps.setCh(2);
 		ps.turnOn();
+	//Will need to change this member function to LDO and SHUNT
 	}
 	else if (action =="TEST")
 	{

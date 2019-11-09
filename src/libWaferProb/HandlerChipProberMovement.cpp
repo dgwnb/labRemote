@@ -37,6 +37,11 @@ double HandlerChipProberMovement::get_current(int channel){
 	return stod(ps.getCurrent);
 }
 
+double HandlerChipProberMovement::get_voltage(int channel){
+	ps.setCh(int);
+	return stod(ps.getVoltage);
+}
+
 void HandlerChipProberMovement::print_cmd(){
     printf("MA X 10  --> move X-axis w.r.t home position 10 millimeter\n"
             "MR X 10 --> move X-axis w.r.t current position 10 millimeter\n"

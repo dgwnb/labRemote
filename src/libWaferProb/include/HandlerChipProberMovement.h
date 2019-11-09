@@ -32,7 +32,8 @@ public:
     virtual ~HandlerChipProberMovement();
     bool write(const string& cmd);
 	void print_cmd();
-	double get_current();
+	double get_current(int channel);
+	double get_voltage(int channel);
 };
 
 #endif
