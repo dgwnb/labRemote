@@ -23,6 +23,7 @@ const float overdrive{0.100};
 
 //Chip LDO testing constants
 const float current_contact_cutoff{0.4};
+const float current_ldo_cutoff{0.4};
 
 //Chip Shunt testing constants
 const float shunt_voltage_max{2};
@@ -51,6 +52,7 @@ const int calib_chip_row{6};
 enum error
 {
 	NONE,
+	INITIAL_CONTACT_ERROR,
 	LDO_MODE_ERROR,
 	SHUNT_MODE_ERROR,
 };

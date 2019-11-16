@@ -60,7 +60,7 @@ int main(int argc, char* argv[] ){
 				}
 			}
 			current_chip_status=0;
-			error_step=LDO_MODE_ERROR;
+			error_step=INITIAL_CONTACT_ERROR;
 		}
 		//If chip working properly move to shunt mode 
 		if (current_chip_status){
@@ -82,7 +82,20 @@ int main(int argc, char* argv[] ){
 		}
 		//Put chip into LDO mode
 		if (current_chip_status){
-			//See if current is within limit
+			cout<<"Starting LDO mode testing";
+			handle_t->write("LDO");
+			for (int l=1; l<6; l++)
+				double current_channel_1= handle_m->get_current(1);
+			if(current_channel_1>current_contact_cutoff){
+				current_chip_status=1;
+				error_step=NONE;
+				break;
+			}
+			else{
+				handle_t->write("POWERCYC");
+			}
+			current_chip_satus=0;
+			error_step=LDO_MODE_ERROR;
 		}
 			//send initial configs
 		if (current_chip_status){
