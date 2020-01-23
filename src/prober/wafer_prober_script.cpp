@@ -97,18 +97,18 @@ int main(int argc, char* argv[] ){
 			current_chip_satus=0;
 			error_step=LDO_MODE_ERROR;
 		}
-			//send initial configs
-		if (current_chip_status){
-			//send the configs
-		}
+		//	//send initial configs
+		//if (current_chip_status){
+		//	//send the configs
+		//}
 		//now run all of the scans
 		if (current_chip_status){
-			//run Register test
-			//Digital scan
-			//Analog scan
-			//Noise Occupancy
-			//treshold scan
-			//
+			cout<<"Starting YARR Scans"
+			//handle_t->write("YARR R");
+			handle_t->write("YARR D");
+			handle_t->write("YARR A");
+			handle_t->write("YARR N");
+			handle_t->write("YARR T");
 		}
 		if (charv[1]=="Single"||charv[1]=="Card"){
 			break;

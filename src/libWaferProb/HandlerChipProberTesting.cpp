@@ -131,6 +131,18 @@ void HandlerChipProberTesting::write(const string& cmd) {
 			{
 				yarr.analog_scan();
 			}
+		 else if (items[1]=="T")
+			{
+				yarr.threshold_scan();
+			}
+		 else if (items[1]=="N")
+			{
+				yarr.noiseoccupancy_scan();
+			}
+		// else if (items[1]=="R")
+		// 	{
+		//		yarr.register_scan();
+		//	}
 		}
 	}
 	else {

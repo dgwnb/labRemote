@@ -10,6 +10,9 @@ YarrTesting();
 public:
 void digital_scan();
 void analog_scan();
+//void register_scan();
+void noiseoccupancy_scan();
+void threshold_scan();
 
 };
 #endif
