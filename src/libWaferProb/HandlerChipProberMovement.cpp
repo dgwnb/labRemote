@@ -33,13 +33,13 @@ HandlerChipProberMovement::~HandlerChipProberMovement(){
 }
 
 double HandlerChipProberMovement::get_current(int channel){
-	ps.setCh(int);
-	return stod(ps.getCurrent);
+	ps.setCh(channel);
+	return stod(ps.getCurrent());
 }
 
 double HandlerChipProberMovement::get_voltage(int channel){
-	ps.setCh(int);
-	return stod(ps.getVoltage);
+	ps.setCh(channel);
+	return stod(ps.getVoltage());
 }
 
 void HandlerChipProberMovement::print_cmd(){
@@ -55,7 +55,7 @@ void HandlerChipProberMovement::print_cmd(){
 			"GP --> gets the position of all the zaber devices\n"
             "SX --> Scan X direction to the right\n"
 			"SB --> Scan the X direction to the left\n"
-			"MM --> Move to the maximum position used in order to get close to chip"
+			"MM --> Move to the maximum position used in order to get close to chip \n"
 			"LC x --> Lower to chip till in contact or until z controller raised x*10 microns \n"
 			"LMX 10 X--> Set the maximum limit to 10 if natural units desired let x=1 if mm let x=0 do not touch this unless absolutely necessary!!!!!!\n"
 			"CP x-->check position where distance from needles to wafer is x\n"
