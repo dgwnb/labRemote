@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/agilent_test.dir/agilentRigolLike_example.cpp.o  -o ../../bin/agilent_test -Wl,-rpath,/home/amolnar/labRemoteMyClone/build/lib ../../lib/libGPIB.so 
