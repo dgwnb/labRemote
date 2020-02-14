@@ -276,6 +276,7 @@ bool HandlerChipProberMovement::write(const string& cmd) {
       ps.setCh(2);
       ps.setVoltage(test_voltage);
       ps.setCurrent(current_limit);
+      ctrl->set_speed(2,0.2);
       for(int i=0;i<loops;i++){
 	ps.setCh(1);
 	ps.turnOn();
