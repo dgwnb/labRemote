@@ -8,7 +8,7 @@
 //Distance constants in natural_units
 //Rd53a is 150 microns thick converting to natural units is 
 const int wafer_thickness{1744};
-const int operating_limit{62000-wafer_thickness};
+const int operating_limit{64000-wafer_thickness};
 //2325 is 200 microns in natural units used for hard limit
 const int hard_limit{75765+2325-wafer_thickness};
 const int needle_height{75765};
