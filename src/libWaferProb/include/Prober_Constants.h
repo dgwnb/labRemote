@@ -29,11 +29,14 @@ const float current_ldo_cutoff{0.4};
 const float shunt_voltage_max{2};
 
 //Agilent constants in  volts or amps respectively
-const float current_limit{0.7}; 
+const float current_limit{0.5}; 
 const float test_voltage{1.2};
 const float VIN{1.7};
 const float VDD{1.2};
 
+/* Asymmetric current limit for channel one and two */
+const float _current_threshold_ch1 = 0.01;
+const float _current_threshold_ch2 = 0.1;
 
 //Keithley 2401 Constants
 //In units if volts or amps respectively

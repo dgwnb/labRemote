@@ -286,9 +286,9 @@ bool HandlerChipProberMovement::write(const string& cmd) {
 	ps.turnOn();
 	double current_channel_2= std::stod(ps.getCurrent());
 	ps.turnOff();
-	std::cout<<"Analog Current is: "<<current_channel_1<<'\n';
-	std::cout<<"Digital Current is: "<<current_channel_2<<'\n';
-	if (current_channel_1>0.01 || current_channel_2>0.1)
+	std::cout<<"Channel 1 Current is: "<<current_channel_1<<", threshold is: "<<_current_threshold_ch1<<" \n";
+	std::cout<<"Channel 2 Current is: "<<current_channel_2<<", threshold is: "<<_current_threshold_ch2<<" \n";
+	if (current_channel_1>_current_threshold_ch1 || current_channel_2>_current_threshold_ch2)
 	  {
 	    std::cout<<"You are in contact next command will lower stage no matter what you type\n";
 	    std::cout<<"Just press enter to lower stage then can put in new commands\n";
