@@ -30,6 +30,7 @@ HandlerChipProberMovement::~HandlerChipProberMovement(){
   ps.setCh(1);
   ps.turnOff();
   ps.setCh(2);
+  ps.turnOff();
 }
 
 double HandlerChipProberMovement::get_current(int channel){
