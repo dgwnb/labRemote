@@ -214,12 +214,12 @@ bool HandlerChipProberMovement::write(const string& cmd) {
     {
       ps.turnOff();
       ctrl->set_max_limit(hard_limit,1);
-      ctrl->set_speed(1, 0.2);
+      // ctrl->set_speed(1, 0.2);
       ctrl->set_speed(2, 0.2);
       ctrl->unpark();
-      ctrl->mv_rel(1, -0.01);
+      // ctrl->mv_rel(1, -0.01);
       ctrl->mv_rel(2, -0.2);
-      ctrl->mv_rel(1, 0.01);
+      // ctrl->mv_rel(1, 0.01);
       ctrl->mv_rel(2, 0.2);
       ctrl->set_max_limit(operating_limit, 1);
       ctrl->park();
